@@ -5,28 +5,18 @@
     <classes>
       <class name="tv9_digital_project.tv9HomePage_test">
         <methods>
-          <include name="testKnowledge"/>
           <include name="bsConfig"/>
           <include name="testTechnology"/>
-          <include name="testEducation"/>
-          <include name="testActiveVideo"/>
+          <include name="afterMethod"/>
           <include name="testState"/>
           <include name="tearDown"/>
-          <include name="testElections2024"/>
           <include name="testWebStory"/>
           <include name="testWorld"/>
-          <include name="testBusiness"/>
           <include name="testHomePage"/>
-          <include name="testHindiLanguage"/>
-          <include name="testSportsLogo"/>
           <include name="testHealth"/>
           <include name="setUp"/>
-          <include name="testCountry"/>
-          <include name="testSports"/>
-          <include name="testReligion"/>
           <include name="asConfig"/>
-          <include name="testAutomateLiveTv"/>
-          <include name="testNotifications"/>
+          <include name="beforeMethod"/>
           <include name="testHamburgerMenu"/>
           <include name="testCloseHamburgerMenu"/>
         </methods>

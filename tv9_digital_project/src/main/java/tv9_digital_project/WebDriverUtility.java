@@ -1,12 +1,20 @@
 package tv9_digital_project;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Driver;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -201,5 +209,58 @@ public class WebDriverUtility {
 	            return null;
 	        }
 	    } 
+	    
+	    /**
+	     * This method will wait for the page to fully load by checking the document's readyState.
+	     * @param driver WebDriver
+	     */
+	
+
+	    /**
+	     * This method will wait for the page to fully load by checking the document's readyState.
+	     * @param driver Webriver instance
+	     */
+	    public void waitForPageToLoad(WebDriver driver) {
+	        try {
+	        	 JavascriptExecutor js = (JavascriptExecutor) driver;
+	             while (!js.executeScript("return document.readyState").equals("complete"))
+	            	 
+	              System.out.println("Page is fully loaded.");//wait until the page is fully loaded
+	        } catch (Exception e) {
+	            System.err.println("Error while waiting for page to load: " + e.getMessage());
+	            takeScreenshot(driver, "page-load-error.png"); // Optional: take screenshot on failure
+	        }
+	    }
+	    
+	    // Take screenshot
+	    public void takeScreenshot(WebDriver driver,String fileName) {
+	        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	        try {
+	            FileUtils.copyFile(screenshot, new File("./screenshotS/" + fileName));
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    
+	    /**
+	     * This method will write test execution details to a notepad file.
+	     *
+	     * @param testName the name of the test
+	     * @param duration the time taken to execute the test
+	     * @param status   the result status of the test (PASS/FAIL)
+	     */
+	    public void writeToNotepad(String testName, long duration, String status) {
+	        String filePath = "./test-results.txt"; // Define the file path
+
+	        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) { // Open file in append mode
+	            writer.write("Test Name: " + testName);
+	            writer.write("\nTime Taken: " + TimeUnit.MILLISECONDS.toSeconds(duration) + " seconds");
+	            writer.write("\nStatus: " + status);
+	            writer.write("\n-----------------------------------------\n");
+	            System.out.println("Test details written to notepad.");
+	        } catch (IOException e) {
+	            System.err.println("Failed to write to notepad: " + e.getMessage());
+	        }
+	    }
 		
 }

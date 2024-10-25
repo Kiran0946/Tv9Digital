@@ -3,6 +3,7 @@ package tv9_digital_project;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -11,14 +12,19 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.Assert;
+import org.testng.ITestResult;
 
 public class tv9HomePage_test extends BaseClass {
 
-	private static final String URL = "https://www.beta.tv9hindi.com/";
-      
+	private static final String URL = "https://www.tv9hindi.com/";//url
+	
+	
+	
 	
 	    @Test
 	    public void testHomePage() throws InterruptedException {
@@ -127,6 +133,8 @@ public class tv9HomePage_test extends BaseClass {
 	    public void testSportsLogo() {
 	   	performAction("img[title='Sports 9']");//sports button logo
 	    }
+	    
+	  
 
 	    private void automateLiveTv() {
 	        try {
