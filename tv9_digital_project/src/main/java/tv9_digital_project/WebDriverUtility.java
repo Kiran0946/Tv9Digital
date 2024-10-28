@@ -149,6 +149,17 @@ public class WebDriverUtility {
 			act.doubleClick().perform();
 		}
 		
+		/*
+		 * This method will get the url of each page.
+		 * @param driver
+		 * 
+		 */
+		
+		public void logCurrentUrl(WebDriver driver) {
+			String currentUrl= driver.getCurrentUrl();
+			System.out.println("The current url is-"+ currentUrl);
+		}
+		
 		/**
 		 * This method will perform double click on a web element
 		 * @param driver

@@ -5,6 +5,7 @@
     <classes>
       <class name="tv9_digital_project.tv9HomePage_test">
         <methods>
+          <include name="testKnowledge"/>
           <include name="bsConfig"/>
           <include name="testTechnology"/>
           <include name="afterMethod"/>
@@ -13,12 +14,15 @@
           <include name="testWebStory"/>
           <include name="testWorld"/>
           <include name="testHomePage"/>
+          <include name="testHindiLanguage"/>
+          <include name="testSportsLogo"/>
           <include name="testHealth"/>
           <include name="setUp"/>
+          <include name="testSports"/>
+          <include name="testReligion"/>
           <include name="asConfig"/>
+          <include name="testNotifications"/>
           <include name="beforeMethod"/>
-          <include name="testHamburgerMenu"/>
-          <include name="testCloseHamburgerMenu"/>
         </methods>
       </class> <!-- tv9_digital_project.tv9HomePage_test -->
     </classes>

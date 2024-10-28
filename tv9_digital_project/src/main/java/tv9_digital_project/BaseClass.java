@@ -27,6 +27,7 @@ public class BaseClass extends WebDriverUtility {
     private long startTime;  //record the time for each test
     
     
+    
     @BeforeMethod
 	public void beforeMethod() {
         startTime = System.currentTimeMillis(); // Record the start time of each test
@@ -74,7 +75,12 @@ public class BaseClass extends WebDriverUtility {
 
         String testName = result.getMethod().getMethodName(); // Get the name of the test
         System.out.println("Test '" + testName + "' took " + TimeUnit.MILLISECONDS.toSeconds(duration) + " seconds to execute.");
+        
+         
+       
     }
+    
+    
     
     @AfterSuite(groups ={"SmokeSuite","RegressionSuite"}) //(alwaysRun= true)
 	public void asConfig() {

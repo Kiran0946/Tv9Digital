@@ -23,25 +23,20 @@ public class tv9HomePage_test extends BaseClass {
 
 	private static final String URL = "https://www.tv9hindi.com/";//url
 	
-	
-	
-	
 	    @Test
 	    public void testHomePage() throws InterruptedException {
 	        driver.get(URL);
-	        System.out.println("Navigated to URL: " + URL);
-	        Thread.sleep(5000);
+	        System.out.println("Navigated to URL: " + URL );
+	        //Thread.sleep(5000);
 	        waitForPageload();
-	       // getCurrentDateTime();
+	        //logCurrentUrl(driver);// it will get the url of each page
+	        getCurrentDateTime();
 	        printInfo();
 	    }
 
 	  
         
-		@Test(dependsOnMethods = "testHomePage")
-	    public void testAutomateLiveTv() {
-	        automateLiveTv();
-	    }
+		
 
 	    @Test(dependsOnMethods = "testHomePage")
 	    public void testWebStory() {
@@ -66,6 +61,11 @@ public class tv9HomePage_test extends BaseClass {
 	    @Test(dependsOnMethods = "testHomePage")
 	    public void testCountry() {
 	        performAction("div[class='tv9_catnavbar'] a[title='देश']");//country tab
+	    }
+	    
+	    @Test(dependsOnMethods = "testHomePage")
+	    public void testAutomateLiveTv() {
+	        automateLiveTv();
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage")
@@ -106,12 +106,12 @@ public class tv9HomePage_test extends BaseClass {
 
 	    @Test(dependsOnMethods = "testHomePage")
 	    public void testHamburgerMenu() {
-	        performAction(".tv9_navbarRHS");//hamburger menu
+	        performAction("i:nth-child(3)");//hamburger menu
 	    }
 
 	    @Test(dependsOnMethods = "testHamburgerMenu")
 	    public void testCloseHamburgerMenu() {
-	        performAction("#closeMenu");
+	        performAction(".close_icon");
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage")
@@ -129,7 +129,7 @@ public class tv9HomePage_test extends BaseClass {
 	        performAction("a[title='Sports9']");//sports tab 
 	    }
 	    
-	    @Test(dependsOnMethods ="testHomePage")
+	    @Test(dependsOnMethods ="testSports")
 	    public void testSportsLogo() {
 	   	performAction("img[title='Sports 9']");//sports button logo
 	    }

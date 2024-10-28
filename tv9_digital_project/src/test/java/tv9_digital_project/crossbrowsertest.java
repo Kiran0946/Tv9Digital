@@ -6,6 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -25,7 +26,7 @@ public class crossbrowsertest {
 				
 		};
 	}
-		@BeforeClass
+		//@BeforeMethod
 		
 		
 		
@@ -33,13 +34,16 @@ public class crossbrowsertest {
 	    public void setUp(String browser) {
 	        switch (browser) {
 	            case "chrome":
+	            	
 	                WebDriverManager.chromedriver().setup();
 	                driver = new ChromeDriver();
 	                break;
+	                
 	            case "firefox":
 	                WebDriverManager.firefoxdriver().setup();
 	                driver = new FirefoxDriver();
 	                break;
+	                
 	            case "edge":
 	            	WebDriverManager.edgedriver().setup();
 	            	driver=new EdgeDriver();
