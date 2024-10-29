@@ -24,7 +24,7 @@ public class BaseClass extends WebDriverUtility {
 	protected WebDriver driver;
     protected WebDriverWait wait;
     private static final int TIMEOUT = 15;
-    private long startTime;  //record the time for each test
+    protected long startTime;  //record the time for each test
     
     
     
@@ -32,12 +32,12 @@ public class BaseClass extends WebDriverUtility {
 	public void beforeMethod() {
         startTime = System.currentTimeMillis(); // Record the start time of each test
     }
-    @BeforeSuite(groups ={"SmokeSuite","RegressionSuite"})//(alwaysRun= true)
-	public void bsConfig() {
-		System.out.println("----- database connection successful -----");
-		
-		
-	}
+    @BeforeSuite
+    public void beforeSuite() {
+    	
+        System.out.println("----- Starting Test Suite -----");
+    }
+
     @BeforeClass
     public void setUp() {
     	try {
@@ -82,9 +82,9 @@ public class BaseClass extends WebDriverUtility {
     
     
     
-    @AfterSuite(groups ={"SmokeSuite","RegressionSuite"}) //(alwaysRun= true)
-	public void asConfig() {
-		System.out.println("----- database closed successfully -----");
+    @AfterSuite //(alwaysRun= true)
+	public void afterSuite() {
+		System.out.println("----- Test Suite Sucessfully Completed  -----");
 	}
 
 }

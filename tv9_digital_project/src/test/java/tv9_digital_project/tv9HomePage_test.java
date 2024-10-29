@@ -19,143 +19,178 @@ import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.ITestResult;
 
-public class tv9HomePage_test extends BaseClass {
+public class tv9HomePage_test  extends  BaseClass {
 
 	private static final String URL = "https://www.tv9hindi.com/";//url
 	
-	    @Test
+	@BeforeMethod
+	
+	public void beforeMethod() {
+		
+	
+        driver.get(URL);
+        System.out.println("Navigated to URL: " + URL);
+        waitForPageload();
+        getCurrentDateTime();
+        logCurrentUrl(driver);
+       // printInfo();
+    }
+	
+	  /*  @Test
 	    public void testHomePage() throws InterruptedException {
+	    	
 	        driver.get(URL);
-	        System.out.println("Navigated to URL: " + URL );
+	        System.out.println(" Navigated to URL:  " + URL );
 	        //Thread.sleep(5000);
 	        waitForPageload();
 	        //logCurrentUrl(driver);// it will get the url of each page
 	        getCurrentDateTime();
 	        printInfo();
-	    }
+	    }*/
 
 	  
-        
+        /*
+         * test cases related to tabs in website
+         */
 		
-
-	    @Test(dependsOnMethods = "testHomePage")
+	 @Test(priority = 1)
+	    public void testHomePage() {
+	        System.out.println("-----Validating homepage-----");
+	        Assert.assertTrue(driver.getTitle().contains("TV9 Bharatvarsh"), "Homepage title validation failed");
+	    }
+	 
+	 @Test(dependsOnMethods = "testHomePage", priority = 2)
 	    public void testWebStory() {
-	        performAction("a[title='वेब स्टोरी']");
+	        validateAndClick("a[title='वेब स्टोरी']", "Web Story");
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage")
+
+	   
+	    @Test(dependsOnMethods = "testHomePage" ,priority=5)
 	    public void testNotifications() {
-	        performAction("#notiCount");
+	        validateAndClick("#notiCount","Notifications");//notification
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage")
+	    @Test(dependsOnMethods = "testHomePage" ,priority=2)
 	    public void testBusiness() {
-	        performAction("a[title='बिजनेस']");
+	        validateAndClick("a[title='बिजनेस']","Business");//bussiness
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage")
+	    @Test(dependsOnMethods = "testHomePage",priority=4)
 	    public void testState() {
-	        performAction("div[class='tv9_catnavbar'] a[title='राज्य']");
+	        validateAndClick("div[class='tv9_catnavbar'] a[title='राज्य']", "State");//state
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage")
+	    @Test(dependsOnMethods = "testHomePage",priority=3)
 	    public void testCountry() {
-	        performAction("div[class='tv9_catnavbar'] a[title='देश']");//country tab
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='देश']","Country");//country tab
 	    }
 	    
-	    @Test(dependsOnMethods = "testHomePage")
-	    public void testAutomateLiveTv() {
+	    @Test(dependsOnMethods = "testHomePage", priority= 6)
+	    public void testAutomateLiveTv() throws InterruptedException {
+	    	//Thread.sleep(5000);
 	        automateLiveTv();
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage")
+	    @Test(dependsOnMethods = "testHomePage" , priority= 7)
 	    public void testElections2024() {
-	        performAction("a[title='चुनाव 2024']");//elections tab
+	    	validateAndClick("a[title='चुनाव 2024']","Elections 2024");//elections tab
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage")
+	    @Test(dependsOnMethods = "testHomePage" , priority=8)
 	    public void testHindiLanguage() {
-	        performAction("img[title='TV9 Bharatvarsh | Hindi News']");//logo button
+	    	validateAndClick("img[title='TV9 Bharatvarsh | Hindi News']", "TV9LOGO");//logo button
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage")
+	    @Test(dependsOnMethods = "testHomePage" , priority=9)
 	    public void testTechnology() {
-	        performAction("a[title='टेक']");//technology tab
-	    }
-
-	    @Test(dependsOnMethods = "testHomePage")
-	    public void testWorld() {
-	        performAction("div[class='tv9_catnavbar'] a[title='दुनिया']");//world tab
-	    }
-
-	    @Test(dependsOnMethods = "testHomePage")
-	    public void testActiveVideo() {
-	        performAction("a[class='active']");
-	    }
-
-	    @Test(dependsOnMethods = "testHomePage")
-	    public void testReligion() {
-	        performAction("div[class='tv9_catnavbar'] a[title='धर्म']");//religion tab
-	    }
-
-	    @Test(dependsOnMethods = "testHomePage")
-	    public void testEducation() {
-	        performAction("div[class='tv9_catnavbar'] a[title='नॉलेज']");
+	    	validateAndClick("a[title='टेक']","Technology");//technology tab
 	        
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage")
+	    @Test(dependsOnMethods = "testHomePage", priority=10)
+	    public void testWorld() {
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='दुनिया']","World");//world tab
+	    }
+
+	    @Test(dependsOnMethods = "testHomePage" , priority=12)
+	    public void testActiveVideo() {
+	    	validateAndClick("a[class='active']","video");
+	    }
+
+	    @Test(dependsOnMethods = "testHomePage" , priority=11)
+	    public void testReligion() {
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='धर्म']","Religion");//religion tab
+	    }
+
+	    @Test(dependsOnMethods = "testHomePage" , priority=13)
+	    public void testEducation() {
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='नॉलेज']","Knowledge");
+	        
+	    }
+
+	    @Test(dependsOnMethods = "testHomePage" , priority=14)
 	    public void testHamburgerMenu() {
-	        performAction("i:nth-child(3)");//hamburger menu
+	    	validateAndClick("i:nth-child(3)","Hamburger menu");//hamburger menu
 	    }
 
-	    @Test(dependsOnMethods = "testHamburgerMenu")
+	    @Test(dependsOnMethods = "testHamburgerMenu" , priority=15)
 	    public void testCloseHamburgerMenu() {
-	        performAction(".close_icon");
+	    	validateAndClick(".close_icon","Close icon on Hamburgre menu");
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage")
+	    @Test(dependsOnMethods = "testHomePage" , priority=16)
 	    public void testHealth() {
-	        performAction("div[class='tv9_catnavbar'] a[title='हेल्थ']");//health tab
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='हेल्थ']","Health");//health tab
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage")
+	    @Test(dependsOnMethods = "testHomePage" , priority=17)
 	    public void testKnowledge() {
-	        performAction("div[class='tv9_catnavbar'] a[title='नॉलेज']");//knowledge tab
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='नॉलेज']","Knowledge");//knowledge tab
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage")
+	    @Test(dependsOnMethods = "testHomePage" , priority=18)
 	    public void testSports() {
-	        performAction("a[title='Sports9']");//sports tab 
+	    	validateAndClick("a[title='Sports9']","Sports");//sports tab 
 	    }
 	    
-	    @Test(dependsOnMethods ="testSports")
+	    @Test(dependsOnMethods ="testSports" , priority=19)
 	    public void testSportsLogo() {
-	   	performAction("img[title='Sports 9']");//sports button logo
+	    	validateAndClick("img[title='Sports 9']","Sports 9 logo");//sports button logo
 	    }
 	    
+	    @AfterMethod
+	    
+	    public void logTestDuration(ITestResult result) {
+	    	
+	        String testName = result.getMethod().getMethodName();
+	        String status = result.isSuccess() ? "PASSED" : "FAILED";
+	        long duration =System.currentTimeMillis()-startTime;
+	        writeToNotepad(testName, duration, status);
+	        System.out.println("Test '" + testName + "' status: " + status + ", duration: " + duration + " ms");
+	    }
+   
 	  
-
 	    private void automateLiveTv() {
 	        try {
 	            WebElement liveTv = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Live TV']//*[name()='svg']")));
 	            liveTv.click();
 	            System.out.println("Live TV started.");
-	            waitForPageload();
+	            //waitForPageload();
 	        } catch (Exception e) {
 	            System.err.println("Failed to start Live TV: " + e.getMessage());
 	            takeScreenshot("error-live-tv.png");
 	        }
 	    }
 
-	    private void performAction(String cssSelector) {
+	  /*  private void performAction(String cssSelector) {
 	        System.out.println("Attempting to click element with selector: " + cssSelector);
 	        boolean actionComplete = clickElement(By.cssSelector(cssSelector));
 	        Assert.assertTrue(actionComplete, "Failed to click on element: " + cssSelector);
 	        waitForPageload();
-	    }
+	    }*/
 
-	    private boolean clickElement(By by) {
+	   /* private boolean clickElement(By by) {
 	        try {
 	            wait.until(ExpectedConditions.elementToBeClickable(by)).click();
 	            System.out.println("Element clicked: " + by);
@@ -165,9 +200,10 @@ public class tv9HomePage_test extends BaseClass {
 	            takeScreenshot("error-click-element.png");
 	            return false;
 	        }
-	    }
+	    }*/
 
-	    private void printInfo() {
+	    @SuppressWarnings("unused")
+		private void printInfo() {
 	        String windowHandle = driver.getWindowHandle();
 	        System.out.println("The handle of the website is: " + windowHandle);
 
@@ -209,11 +245,22 @@ public class tv9HomePage_test extends BaseClass {
 	        }
 	    }
 	    
-	    @AfterSuite(groups ={"SmokeSuite","RegressionSuite"}) //(alwaysRun= true)
-		public void asConfig() {
-			System.out.println("----- database closed successfully -----");
+	    @AfterSuite
+		public void afterSuite() {
+			System.out.println("----- Test Suite Completed -----");
 		}
        
+	    private void validateAndClick(String cssSelector, String elementDescription) {
+	        try {
+	            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)));
+	            element.click();
+	            System.out.println("Clicked on " + elementDescription);
+	            waitForPageload();
+	        } catch (Exception e) {
+	            System.err.println("Failed to click on " + elementDescription + ": " + e.getMessage());
+	            takeScreenshot("error-" + elementDescription + ".png");
+	        }
+	    }
 	    
 	  
 	}
