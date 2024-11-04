@@ -1,625 +1,721 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="20" passed="20" failed="0" skipped="0">
+<testng-results ignored="0" total="22" passed="21" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-29T16:21:56 IST" name="Default suite" finished-at="2024-10-29T16:23:55 IST" duration-ms="118952">
+  <suite started-at="2024-11-04T14:56:55 IST" name="Default suite" finished-at="2024-11-04T15:00:10 IST" duration-ms="194241">
     <groups>
     </groups>
-    <test started-at="2024-10-29T16:21:56 IST" name="Default test" finished-at="2024-10-29T16:23:55 IST" duration-ms="118952">
+    <test started-at="2024-11-04T14:56:55 IST" name="Default test" finished-at="2024-11-04T15:00:10 IST" duration-ms="194241">
       <class name="tv9_digital_project.tv9HomePage_test">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:21:56 IST" name="beforeSuite" finished-at="2024-10-29T16:21:56 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:56:55 IST" name="beforeSuite" finished-at="2024-11-04T14:56:55 IST" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:21:56 IST" name="setUp" finished-at="2024-10-29T16:22:05 IST" duration-ms="8743" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:56:55 IST" name="setUp" finished-at="2024-11-04T14:57:10 IST" duration-ms="14467" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:05 IST" name="beforeMethod" finished-at="2024-10-29T16:22:09 IST" duration-ms="4119" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:57:10 IST" name="beforeMethod" finished-at="2024-11-04T14:57:23 IST" duration-ms="13482" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testHomePage()[pri:1, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:09 IST" name="testHomePage" finished-at="2024-10-29T16:22:09 IST" duration-ms="17" status="PASS">
+        <test-method signature="testCoreWebVitals()[pri:1, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:57:23 IST" name="testCoreWebVitals" finished-at="2024-11-04T14:57:54 IST" duration-ms="30156" status="FAIL">
+          <exception class="java.lang.ClassCastException">
+            <message>
+              <![CDATA[class java.lang.Integer cannot be cast to class java.lang.Double (java.lang.Integer and java.lang.Double are in module java.base of loader 'bootstrap')]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ClassCastException: class java.lang.Integer cannot be cast to class java.lang.Double (java.lang.Integer and java.lang.Double are in module java.base of loader 'bootstrap')
+at tv9_digital_project.tv9HomePage_test.testCoreWebVitals(tv9HomePage_test.java:75)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ClassCastException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCoreWebVitals -->
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:57:54 IST" name="logTestDuration" finished-at="2024-11-04T14:57:54 IST" duration-ms="9" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCoreWebVitals status=FAILURE method=tv9HomePage_test.testCoreWebVitals()[pri:1, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestDuration -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:57:54 IST" name="afterMethod" finished-at="2024-11-04T14:57:54 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCoreWebVitals status=FAILURE method=tv9HomePage_test.testCoreWebVitals()[pri:1, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:57:54 IST" name="beforeMethod" finished-at="2024-11-04T14:57:56 IST" duration-ms="2572" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testHomePage()[pri:2, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:57:56 IST" name="testHomePage" finished-at="2024-11-04T14:57:56 IST" duration-ms="52" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomePage -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:09 IST" name="logTestDuration" finished-at="2024-10-29T16:22:09 IST" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:57:56 IST" name="logTestDuration" finished-at="2024-11-04T14:57:56 IST" duration-ms="62" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testHomePage status=SUCCESS method=tv9HomePage_test.testHomePage()[pri:1, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testHomePage status=SUCCESS method=tv9HomePage_test.testHomePage()[pri:2, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:09 IST" name="afterMethod" finished-at="2024-10-29T16:22:09 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:57:56 IST" name="afterMethod" finished-at="2024-11-04T14:57:56 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testHomePage status=SUCCESS method=tv9HomePage_test.testHomePage()[pri:1, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testHomePage status=SUCCESS method=tv9HomePage_test.testHomePage()[pri:2, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:09 IST" name="beforeMethod" finished-at="2024-10-29T16:22:10 IST" duration-ms="1024" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:57:56 IST" name="beforeMethod" finished-at="2024-11-04T14:57:59 IST" duration-ms="2608" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testBusiness()[pri:2, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:10 IST" name="testBusiness" finished-at="2024-10-29T16:22:12 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="1910" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testBusiness -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:12 IST" name="logTestDuration" finished-at="2024-10-29T16:22:12 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testBusiness status=SUCCESS method=tv9HomePage_test.testBusiness()[pri:2, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:12 IST" name="afterMethod" finished-at="2024-10-29T16:22:12 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testBusiness status=SUCCESS method=tv9HomePage_test.testBusiness()[pri:2, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:12 IST" name="beforeMethod" finished-at="2024-10-29T16:22:13 IST" duration-ms="1197" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="testWebStory()[pri:2, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:13 IST" name="testWebStory" finished-at="2024-10-29T16:22:15 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="2449" status="PASS">
+        <test-method signature="testWebStory()[pri:3, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:57:59 IST" name="testWebStory" finished-at="2024-11-04T14:58:03 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="3861" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWebStory -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:15 IST" name="logTestDuration" finished-at="2024-10-29T16:22:15 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:03 IST" name="logTestDuration" finished-at="2024-11-04T14:58:03 IST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testWebStory status=SUCCESS method=tv9HomePage_test.testWebStory()[pri:2, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testWebStory status=SUCCESS method=tv9HomePage_test.testWebStory()[pri:3, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:15 IST" name="afterMethod" finished-at="2024-10-29T16:22:15 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:03 IST" name="afterMethod" finished-at="2024-11-04T14:58:03 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testWebStory status=SUCCESS method=tv9HomePage_test.testWebStory()[pri:2, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testWebStory status=SUCCESS method=tv9HomePage_test.testWebStory()[pri:3, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:15 IST" name="beforeMethod" finished-at="2024-10-29T16:22:17 IST" duration-ms="1372" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:03 IST" name="beforeMethod" finished-at="2024-11-04T14:58:05 IST" duration-ms="2506" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testCountry()[pri:3, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:17 IST" name="testCountry" finished-at="2024-10-29T16:22:19 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="1883" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCountry -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:19 IST" name="logTestDuration" finished-at="2024-10-29T16:22:19 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testCountry status=SUCCESS method=tv9HomePage_test.testCountry()[pri:3, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:19 IST" name="afterMethod" finished-at="2024-10-29T16:22:19 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testCountry status=SUCCESS method=tv9HomePage_test.testCountry()[pri:3, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:19 IST" name="beforeMethod" finished-at="2024-10-29T16:22:20 IST" duration-ms="1403" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="testState()[pri:4, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:20 IST" name="testState" finished-at="2024-10-29T16:22:23 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="3033" status="PASS">
+        <test-method signature="testState()[pri:4, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:05 IST" name="testState" finished-at="2024-11-04T14:58:10 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="4691" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testState -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:23 IST" name="logTestDuration" finished-at="2024-10-29T16:22:23 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:10 IST" name="logTestDuration" finished-at="2024-11-04T14:58:10 IST" duration-ms="9" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testState status=SUCCESS method=tv9HomePage_test.testState()[pri:4, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testState status=SUCCESS method=tv9HomePage_test.testState()[pri:4, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:23 IST" name="afterMethod" finished-at="2024-10-29T16:22:23 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:10 IST" name="afterMethod" finished-at="2024-11-04T14:58:10 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testState status=SUCCESS method=tv9HomePage_test.testState()[pri:4, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testState status=SUCCESS method=tv9HomePage_test.testState()[pri:4, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:23 IST" name="beforeMethod" finished-at="2024-10-29T16:22:24 IST" duration-ms="1394" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:10 IST" name="beforeMethod" finished-at="2024-11-04T14:58:12 IST" duration-ms="1779" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testNotifications()[pri:5, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:24 IST" name="testNotifications" finished-at="2024-10-29T16:22:25 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="576" status="PASS">
+        <test-method signature="testNotifications()[pri:5, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:12 IST" name="testNotifications" finished-at="2024-11-04T14:58:13 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="1196" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNotifications -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:25 IST" name="logTestDuration" finished-at="2024-10-29T16:22:25 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:13 IST" name="logTestDuration" finished-at="2024-11-04T14:58:13 IST" duration-ms="7" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testNotifications status=SUCCESS method=tv9HomePage_test.testNotifications()[pri:5, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testNotifications status=SUCCESS method=tv9HomePage_test.testNotifications()[pri:5, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:25 IST" name="afterMethod" finished-at="2024-10-29T16:22:25 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:13 IST" name="afterMethod" finished-at="2024-11-04T14:58:13 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testNotifications status=SUCCESS method=tv9HomePage_test.testNotifications()[pri:5, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testNotifications status=SUCCESS method=tv9HomePage_test.testNotifications()[pri:5, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:25 IST" name="beforeMethod" finished-at="2024-10-29T16:22:26 IST" duration-ms="1151" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:13 IST" name="beforeMethod" finished-at="2024-11-04T14:58:16 IST" duration-ms="2641" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testAutomateLiveTv()[pri:6, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:26 IST" name="testAutomateLiveTv" finished-at="2024-10-29T16:22:28 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="2041" status="PASS">
+        <test-method signature="testCountry()[pri:6, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:16 IST" name="testCountry" finished-at="2024-11-04T14:58:19 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="2916" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCountry -->
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:19 IST" name="logTestDuration" finished-at="2024-11-04T14:58:19 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCountry status=SUCCESS method=tv9HomePage_test.testCountry()[pri:6, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestDuration -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:19 IST" name="afterMethod" finished-at="2024-11-04T14:58:19 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCountry status=SUCCESS method=tv9HomePage_test.testCountry()[pri:6, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:19 IST" name="beforeMethod" finished-at="2024-11-04T14:58:20 IST" duration-ms="1792" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testAutomateLiveTv()[pri:7, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:20 IST" name="testAutomateLiveTv" finished-at="2024-11-04T14:58:26 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="5830" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAutomateLiveTv -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:28 IST" name="logTestDuration" finished-at="2024-10-29T16:22:28 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:26 IST" name="logTestDuration" finished-at="2024-11-04T14:58:26 IST" duration-ms="15" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testAutomateLiveTv status=SUCCESS method=tv9HomePage_test.testAutomateLiveTv()[pri:6, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testAutomateLiveTv status=SUCCESS method=tv9HomePage_test.testAutomateLiveTv()[pri:7, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:28 IST" name="afterMethod" finished-at="2024-10-29T16:22:28 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:26 IST" name="afterMethod" finished-at="2024-11-04T14:58:26 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testAutomateLiveTv status=SUCCESS method=tv9HomePage_test.testAutomateLiveTv()[pri:6, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testAutomateLiveTv status=SUCCESS method=tv9HomePage_test.testAutomateLiveTv()[pri:7, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:28 IST" name="beforeMethod" finished-at="2024-10-29T16:22:30 IST" duration-ms="1436" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:26 IST" name="beforeMethod" finished-at="2024-11-04T14:58:28 IST" duration-ms="2016" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testElections2024()[pri:7, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:30 IST" name="testElections2024" finished-at="2024-10-29T16:22:31 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="1812" status="PASS">
+        <test-method signature="testElections2024()[pri:8, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:28 IST" name="testElections2024" finished-at="2024-11-04T14:58:33 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="5111" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testElections2024 -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:31 IST" name="logTestDuration" finished-at="2024-10-29T16:22:31 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:33 IST" name="logTestDuration" finished-at="2024-11-04T14:58:33 IST" duration-ms="9" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testElections2024 status=SUCCESS method=tv9HomePage_test.testElections2024()[pri:7, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testElections2024 status=SUCCESS method=tv9HomePage_test.testElections2024()[pri:8, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:31 IST" name="afterMethod" finished-at="2024-10-29T16:22:31 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:33 IST" name="afterMethod" finished-at="2024-11-04T14:58:33 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testElections2024 status=SUCCESS method=tv9HomePage_test.testElections2024()[pri:7, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testElections2024 status=SUCCESS method=tv9HomePage_test.testElections2024()[pri:8, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:31 IST" name="beforeMethod" finished-at="2024-10-29T16:22:33 IST" duration-ms="1223" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:33 IST" name="beforeMethod" finished-at="2024-11-04T14:58:35 IST" duration-ms="2074" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testHindiLanguage()[pri:8, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:33 IST" name="testHindiLanguage" finished-at="2024-10-29T16:22:48 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="15800" status="PASS">
+        <test-method signature="testHindiLanguage()[pri:9, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:35 IST" name="testHindiLanguage" finished-at="2024-11-04T14:58:47 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="11159" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHindiLanguage -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:48 IST" name="logTestDuration" finished-at="2024-10-29T16:22:48 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:47 IST" name="logTestDuration" finished-at="2024-11-04T14:58:47 IST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testHindiLanguage status=SUCCESS method=tv9HomePage_test.testHindiLanguage()[pri:8, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testHindiLanguage status=SUCCESS method=tv9HomePage_test.testHindiLanguage()[pri:9, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:48 IST" name="afterMethod" finished-at="2024-10-29T16:22:48 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:47 IST" name="afterMethod" finished-at="2024-11-04T14:58:47 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testHindiLanguage status=SUCCESS method=tv9HomePage_test.testHindiLanguage()[pri:8, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testHindiLanguage status=SUCCESS method=tv9HomePage_test.testHindiLanguage()[pri:9, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:48 IST" name="beforeMethod" finished-at="2024-10-29T16:22:50 IST" duration-ms="1916" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:47 IST" name="beforeMethod" finished-at="2024-11-04T14:58:48 IST" duration-ms="1866" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testTechnology()[pri:9, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:50 IST" name="testTechnology" finished-at="2024-10-29T16:22:53 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="2915" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testTechnology -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:53 IST" name="logTestDuration" finished-at="2024-10-29T16:22:53 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testTechnology status=SUCCESS method=tv9HomePage_test.testTechnology()[pri:9, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:53 IST" name="afterMethod" finished-at="2024-10-29T16:22:53 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testTechnology status=SUCCESS method=tv9HomePage_test.testTechnology()[pri:9, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:53 IST" name="beforeMethod" finished-at="2024-10-29T16:22:54 IST" duration-ms="1157" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="testWorld()[pri:10, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:54 IST" name="testWorld" finished-at="2024-10-29T16:22:56 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="1909" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testWorld -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:56 IST" name="logTestDuration" finished-at="2024-10-29T16:22:56 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testWorld status=SUCCESS method=tv9HomePage_test.testWorld()[pri:10, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:56 IST" name="beforeMethod" finished-at="2024-10-29T16:22:58 IST" duration-ms="1297" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:56 IST" name="afterMethod" finished-at="2024-10-29T16:22:56 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testWorld status=SUCCESS method=tv9HomePage_test.testWorld()[pri:10, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="testReligion()[pri:11, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:58 IST" name="testReligion" finished-at="2024-10-29T16:22:59 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="1754" status="PASS">
+        <test-method signature="testReligion()[pri:10, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:48 IST" name="testReligion" finished-at="2024-11-04T14:58:51 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="3046" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testReligion -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:59 IST" name="logTestDuration" finished-at="2024-10-29T16:22:59 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:51 IST" name="logTestDuration" finished-at="2024-11-04T14:58:51 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testReligion status=SUCCESS method=tv9HomePage_test.testReligion()[pri:11, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testReligion status=SUCCESS method=tv9HomePage_test.testReligion()[pri:10, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:59 IST" name="afterMethod" finished-at="2024-10-29T16:22:59 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:51 IST" name="afterMethod" finished-at="2024-11-04T14:58:51 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testReligion status=SUCCESS method=tv9HomePage_test.testReligion()[pri:11, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testReligion status=SUCCESS method=tv9HomePage_test.testReligion()[pri:10, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:22:59 IST" name="beforeMethod" finished-at="2024-10-29T16:23:00 IST" duration-ms="889" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:51 IST" name="beforeMethod" finished-at="2024-11-04T14:58:53 IST" duration-ms="1787" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testActiveVideo()[pri:12, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:00 IST" name="testActiveVideo" finished-at="2024-10-29T16:23:01 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="901" status="PASS">
+        <test-method signature="testTechnology()[pri:10, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:53 IST" name="testTechnology" finished-at="2024-11-04T14:58:58 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="4434" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTechnology -->
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:58 IST" name="logTestDuration" finished-at="2024-11-04T14:58:58 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testTechnology status=SUCCESS method=tv9HomePage_test.testTechnology()[pri:10, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestDuration -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:58 IST" name="afterMethod" finished-at="2024-11-04T14:58:58 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testTechnology status=SUCCESS method=tv9HomePage_test.testTechnology()[pri:10, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:58:58 IST" name="beforeMethod" finished-at="2024-11-04T14:59:00 IST" duration-ms="1987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testActiveVideo()[pri:11, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:00 IST" name="testActiveVideo" finished-at="2024-11-04T14:59:03 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="3258" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testActiveVideo -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:01 IST" name="logTestDuration" finished-at="2024-10-29T16:23:01 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:03 IST" name="logTestDuration" finished-at="2024-11-04T14:59:03 IST" duration-ms="28" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testActiveVideo status=SUCCESS method=tv9HomePage_test.testActiveVideo()[pri:12, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testActiveVideo status=SUCCESS method=tv9HomePage_test.testActiveVideo()[pri:11, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:01 IST" name="beforeMethod" finished-at="2024-10-29T16:23:02 IST" duration-ms="877" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:01 IST" name="afterMethod" finished-at="2024-10-29T16:23:01 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:03 IST" name="afterMethod" finished-at="2024-11-04T14:59:03 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testActiveVideo status=SUCCESS method=tv9HomePage_test.testActiveVideo()[pri:12, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testActiveVideo status=SUCCESS method=tv9HomePage_test.testActiveVideo()[pri:11, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method signature="testEducation()[pri:13, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:02 IST" name="testEducation" finished-at="2024-10-29T16:23:04 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="1863" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:03 IST" name="beforeMethod" finished-at="2024-11-04T14:59:05 IST" duration-ms="2511" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testEducation()[pri:12, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:05 IST" name="testEducation" finished-at="2024-11-04T14:59:08 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="2966" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEducation -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:04 IST" name="logTestDuration" finished-at="2024-10-29T16:23:04 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:08 IST" name="logTestDuration" finished-at="2024-11-04T14:59:08 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testEducation status=SUCCESS method=tv9HomePage_test.testEducation()[pri:13, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testEducation status=SUCCESS method=tv9HomePage_test.testEducation()[pri:12, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:04 IST" name="afterMethod" finished-at="2024-10-29T16:23:04 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:08 IST" name="afterMethod" finished-at="2024-11-04T14:59:08 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testEducation status=SUCCESS method=tv9HomePage_test.testEducation()[pri:13, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testEducation status=SUCCESS method=tv9HomePage_test.testEducation()[pri:12, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:04 IST" name="beforeMethod" finished-at="2024-10-29T16:23:05 IST" duration-ms="1158" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:08 IST" name="beforeMethod" finished-at="2024-11-04T14:59:10 IST" duration-ms="1954" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testHamburgerMenu()[pri:14, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:05 IST" name="testHamburgerMenu" finished-at="2024-10-29T16:23:05 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="360" status="PASS">
+        <test-method signature="testHamburgerMenu()[pri:13, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:10 IST" name="testHamburgerMenu" finished-at="2024-11-04T14:59:11 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="1084" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHamburgerMenu -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:05 IST" name="logTestDuration" finished-at="2024-10-29T16:23:05 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:11 IST" name="logTestDuration" finished-at="2024-11-04T14:59:12 IST" duration-ms="16" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testHamburgerMenu status=SUCCESS method=tv9HomePage_test.testHamburgerMenu()[pri:14, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testHamburgerMenu status=SUCCESS method=tv9HomePage_test.testHamburgerMenu()[pri:13, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:05 IST" name="afterMethod" finished-at="2024-10-29T16:23:05 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:12 IST" name="afterMethod" finished-at="2024-11-04T14:59:12 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testHamburgerMenu status=SUCCESS method=tv9HomePage_test.testHamburgerMenu()[pri:14, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testHamburgerMenu status=SUCCESS method=tv9HomePage_test.testHamburgerMenu()[pri:13, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:05 IST" name="beforeMethod" finished-at="2024-10-29T16:23:07 IST" duration-ms="1433" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:12 IST" name="beforeMethod" finished-at="2024-11-04T14:59:14 IST" duration-ms="2614" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testCloseHamburgerMenu()[pri:15, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:07 IST" name="testCloseHamburgerMenu" finished-at="2024-10-29T16:23:23 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHamburgerMenu" duration-ms="15807" status="PASS">
+        <test-method signature="testCloseHamburgerMenu()[pri:14, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:14 IST" name="testCloseHamburgerMenu" finished-at="2024-11-04T14:59:25 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHamburgerMenu" duration-ms="10791" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCloseHamburgerMenu -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:23 IST" name="logTestDuration" finished-at="2024-10-29T16:23:23 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:25 IST" name="logTestDuration" finished-at="2024-11-04T14:59:25 IST" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testCloseHamburgerMenu status=SUCCESS method=tv9HomePage_test.testCloseHamburgerMenu()[pri:15, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testCloseHamburgerMenu status=SUCCESS method=tv9HomePage_test.testCloseHamburgerMenu()[pri:14, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:23 IST" name="afterMethod" finished-at="2024-10-29T16:23:23 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:25 IST" name="afterMethod" finished-at="2024-11-04T14:59:25 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testCloseHamburgerMenu status=SUCCESS method=tv9HomePage_test.testCloseHamburgerMenu()[pri:15, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testCloseHamburgerMenu status=SUCCESS method=tv9HomePage_test.testCloseHamburgerMenu()[pri:14, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:23 IST" name="beforeMethod" finished-at="2024-10-29T16:23:25 IST" duration-ms="1892" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:25 IST" name="beforeMethod" finished-at="2024-11-04T14:59:27 IST" duration-ms="2082" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testHealth()[pri:16, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:25 IST" name="testHealth" finished-at="2024-10-29T16:23:27 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="2563" status="PASS">
+        <test-method signature="testHealth()[pri:15, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:27 IST" name="testHealth" finished-at="2024-11-04T14:59:31 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="3630" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHealth -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:27 IST" name="logTestDuration" finished-at="2024-10-29T16:23:27 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:31 IST" name="logTestDuration" finished-at="2024-11-04T14:59:31 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testHealth status=SUCCESS method=tv9HomePage_test.testHealth()[pri:16, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testHealth status=SUCCESS method=tv9HomePage_test.testHealth()[pri:15, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:27 IST" name="afterMethod" finished-at="2024-10-29T16:23:27 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:31 IST" name="afterMethod" finished-at="2024-11-04T14:59:31 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testHealth status=SUCCESS method=tv9HomePage_test.testHealth()[pri:16, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testHealth status=SUCCESS method=tv9HomePage_test.testHealth()[pri:15, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:27 IST" name="beforeMethod" finished-at="2024-10-29T16:23:29 IST" duration-ms="1700" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:31 IST" name="beforeMethod" finished-at="2024-11-04T14:59:32 IST" duration-ms="1665" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testKnowledge()[pri:17, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:29 IST" name="testKnowledge" finished-at="2024-10-29T16:23:30 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="1307" status="PASS">
+        <test-method signature="testKnowledge()[pri:16, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:32 IST" name="testKnowledge" finished-at="2024-11-04T14:59:35 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="2520" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testKnowledge -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:30 IST" name="logTestDuration" finished-at="2024-10-29T16:23:30 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:35 IST" name="logTestDuration" finished-at="2024-11-04T14:59:35 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testKnowledge status=SUCCESS method=tv9HomePage_test.testKnowledge()[pri:17, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testKnowledge status=SUCCESS method=tv9HomePage_test.testKnowledge()[pri:16, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:30 IST" name="afterMethod" finished-at="2024-10-29T16:23:30 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:35 IST" name="afterMethod" finished-at="2024-11-04T14:59:35 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testKnowledge status=SUCCESS method=tv9HomePage_test.testKnowledge()[pri:17, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testKnowledge status=SUCCESS method=tv9HomePage_test.testKnowledge()[pri:16, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:30 IST" name="beforeMethod" finished-at="2024-10-29T16:23:32 IST" duration-ms="1393" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:35 IST" name="beforeMethod" finished-at="2024-11-04T14:59:37 IST" duration-ms="2024" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testSports()[pri:18, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:32 IST" name="testSports" finished-at="2024-10-29T16:23:36 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="4048" status="PASS">
+        <test-method signature="testSports()[pri:17, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:37 IST" name="testSports" finished-at="2024-11-04T14:59:42 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="5313" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSports -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:36 IST" name="logTestDuration" finished-at="2024-10-29T16:23:36 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:42 IST" name="logTestDuration" finished-at="2024-11-04T14:59:42 IST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testSports status=SUCCESS method=tv9HomePage_test.testSports()[pri:18, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testSports status=SUCCESS method=tv9HomePage_test.testSports()[pri:17, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:36 IST" name="beforeMethod" finished-at="2024-10-29T16:23:38 IST" duration-ms="2066" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:42 IST" name="afterMethod" finished-at="2024-11-04T14:59:42 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testSports status=SUCCESS method=tv9HomePage_test.testSports()[pri:17, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:42 IST" name="beforeMethod" finished-at="2024-11-04T14:59:44 IST" duration-ms="1803" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:36 IST" name="afterMethod" finished-at="2024-10-29T16:23:36 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testSports status=SUCCESS method=tv9HomePage_test.testSports()[pri:18, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="testSportsLogo()[pri:19, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:38 IST" name="testSportsLogo" finished-at="2024-10-29T16:23:53 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testSports" duration-ms="15649" status="PASS">
+        <test-method signature="testSportsLogo()[pri:18, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:44 IST" name="testSportsLogo" finished-at="2024-11-04T14:59:55 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testSports" duration-ms="10588" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSportsLogo -->
-        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:53 IST" name="logTestDuration" finished-at="2024-10-29T16:23:53 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:55 IST" name="logTestDuration" finished-at="2024-11-04T14:59:55 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testSportsLogo status=SUCCESS method=tv9HomePage_test.testSportsLogo()[pri:19, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testSportsLogo status=SUCCESS method=tv9HomePage_test.testSportsLogo()[pri:18, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestDuration -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:53 IST" name="tearDown" finished-at="2024-10-29T16:23:55 IST" duration-ms="1416" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:53 IST" name="afterMethod" finished-at="2024-10-29T16:23:53 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:55 IST" name="afterMethod" finished-at="2024-11-04T14:59:55 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testSportsLogo status=SUCCESS method=tv9HomePage_test.testSportsLogo()[pri:19, instance:tv9_digital_project.tv9HomePage_test@2f4948e4] output={null}]]]>
+                <![CDATA[[TestResult name=testSportsLogo status=SUCCESS method=tv9HomePage_test.testSportsLogo()[pri:18, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:tv9_digital_project.tv9HomePage_test@2f4948e4]" started-at="2024-10-29T16:23:55 IST" name="afterSuite" finished-at="2024-10-29T16:23:55 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:55 IST" name="beforeMethod" finished-at="2024-11-04T14:59:57 IST" duration-ms="1987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testBusiness()[pri:19, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:57 IST" name="testBusiness" finished-at="2024-11-04T14:59:59 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="2785" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBusiness -->
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:59 IST" name="logTestDuration" finished-at="2024-11-04T14:59:59 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testBusiness status=SUCCESS method=tv9HomePage_test.testBusiness()[pri:19, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestDuration -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:59 IST" name="afterMethod" finished-at="2024-11-04T14:59:59 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testBusiness status=SUCCESS method=tv9HomePage_test.testBusiness()[pri:19, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T14:59:59 IST" name="beforeMethod" finished-at="2024-11-04T15:00:01 IST" duration-ms="1918" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testWorld()[pri:20, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T15:00:01 IST" name="testWorld" finished-at="2024-11-04T15:00:04 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="2967" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWorld -->
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T15:00:04 IST" name="logTestDuration" finished-at="2024-11-04T15:00:04 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testWorld status=SUCCESS method=tv9HomePage_test.testWorld()[pri:20, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestDuration -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T15:00:04 IST" name="afterMethod" finished-at="2024-11-04T15:00:04 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testWorld status=SUCCESS method=tv9HomePage_test.testWorld()[pri:20, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T15:00:04 IST" name="beforeMethod" finished-at="2024-11-04T15:00:06 IST" duration-ms="2185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testIsPageUsingHttps()[pri:21, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T15:00:06 IST" name="testIsPageUsingHttps" finished-at="2024-11-04T15:00:06 IST" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsPageUsingHttps -->
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T15:00:06 IST" name="logTestDuration" finished-at="2024-11-04T15:00:06 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testIsPageUsingHttps status=SUCCESS method=tv9HomePage_test.testIsPageUsingHttps()[pri:21, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestDuration -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T15:00:06 IST" name="afterMethod" finished-at="2024-11-04T15:00:06 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testIsPageUsingHttps status=SUCCESS method=tv9HomePage_test.testIsPageUsingHttps()[pri:21, instance:tv9_digital_project.tv9HomePage_test@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T15:00:06 IST" name="tearDown" finished-at="2024-11-04T15:00:10 IST" duration-ms="3185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:tv9_digital_project.tv9HomePage_test@31000e60]" started-at="2024-11-04T15:00:10 IST" name="afterSuite" finished-at="2024-11-04T15:00:10 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

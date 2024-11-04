@@ -23,7 +23,7 @@ public class BaseClass extends WebDriverUtility {
 	public static WebDriverUtility wUtil = new WebDriverUtility();
 	protected WebDriver driver;
     protected WebDriverWait wait;
-    private static final int TIMEOUT = 15;
+    private static final int TIMEOUT = 10;
     protected long startTime;  //record the time for each test
     
     

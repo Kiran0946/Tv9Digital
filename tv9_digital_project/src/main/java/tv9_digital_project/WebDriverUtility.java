@@ -8,9 +8,13 @@ import java.sql.Driver;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import org.apache.logging.log4j.LogManager;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -23,6 +27,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import org.apache.logging.log4j.Logger;
+
+
+
 
 /*
  * THis class contains all the generic methods related to 
@@ -32,6 +40,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 @SuppressWarnings("unused")
 
 public class WebDriverUtility {
+	
+	private static final Logger logger = LogManager.getLogger(WebDriverUtility.class);
 
 	/**
 	 * This method will maximize the window
@@ -245,6 +255,8 @@ public class WebDriverUtility {
 	    
 	    // Take screenshot
 	    public void takeScreenshot(WebDriver driver,String fileName) {
+	    	String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
+	    	
 	        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 	        try {
 	            FileUtils.copyFile(screenshot, new File("./screenshotS/" + fileName));
@@ -255,7 +267,7 @@ public class WebDriverUtility {
 	    
 	    /**
 	     * This method will write test execution details to a notepad file.
-	     *
+	     
 	     * @param testName the name of the test
 	     * @param duration the time taken to execute the test
 	     * @param status   the result status of the test (PASS/FAIL)
@@ -274,4 +286,108 @@ public class WebDriverUtility {
 	        }
 	    }
 		
+	    //using string.join get core web vitals
+	    
+	    public Map<String, Object> getCoreWebVitals(WebDriver driver) {
+	        
+	    	Map<String, Object> coreWebVitals = new HashMap<>();
+
+	        String script = String.join("",
+	            "const vitals = { lcp: 0, fid: 0, cls: 0 };",
+	            
+	            "const performanceObserver = new PerformanceObserver((list) => {",
+	            "    for (const entry of list.getEntries()) {",
+	            "        if (entry.name === 'largest-contentful-paint') {",
+	            "            vitals.lcp = entry.startTime;",
+	            "        }",
+	            "        if (entry.name === 'first-input') {",
+	            "            vitals.fid = entry.processingStart - entry.startTime;",
+	            "        }",
+	            "    }",
+	            "});",
+	            
+	            "const layoutShiftObserver = new PerformanceObserver((list) => {",
+	            "    list.getEntries().forEach((entry) => {",
+	            "        if (!entry.hadRecentInput) {",
+	            "            vitals.cls += entry.value;",
+	            "        }",
+	            "    });",
+	            "});",
+	            
+	            "performanceObserver.observe({ type: 'largest-contentful-paint', buffered: true });",
+	            "performanceObserver.observe({ type: 'first-input', buffered: true });",
+	            "layoutShiftObserver.observe({ type: 'layout-shift', buffered: true });",
+	            
+	            "return new Promise(resolve => {",
+	            "    setTimeout(() => resolve(vitals), 5000);", // Wait 5 seconds to gather data
+	            "});"
+	        );
+
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        try {
+	            coreWebVitals = (Map<String, Object>) js.executeAsyncScript(script);
+	            System.out.println("Core Web Vitals captured: " + coreWebVitals);
+
+	            // Validation against thresholds
+	            validateCoreWebVitals(coreWebVitals);
+	        } catch (Exception e) {
+	            System.err.println("Failed to retrieve Core Web Vitals: " + e.getMessage());
+	        }
+	        
+	        return coreWebVitals;
+	    }
+
+	    private void validateCoreWebVitals(Map<String, Object> coreWebVitals) {
+	        // Recommended thresholds for Web Vitals
+	        double lcpThreshold = 2500; // 2.5 seconds
+	        double fidThreshold = 100;  // 0.1 seconds
+	        double clsThreshold = 0.1;  // 0.1
+
+	        double lcp = (double) coreWebVitals.getOrDefault("lcp", 0);
+	        double fid = (double) coreWebVitals.getOrDefault("fid", 0);
+	        double cls = (double) coreWebVitals.getOrDefault("cls", 0);
+
+	        if (lcp > lcpThreshold) {
+	            System.err.println("Warning: LCP exceeds threshold (" + lcp + " ms > " + lcpThreshold + " ms)");
+	        } else {
+	            System.out.println("LCP is within the threshold: " + lcp + " ms");
+	        }
+
+	        if (fid > fidThreshold) {
+	            System.err.println("Warning: FID exceeds threshold (" + fid + " ms > " + fidThreshold + " ms)");
+	        } else {
+	            System.out.println("FID is within the threshold: " + fid + " ms");
+	        }
+
+	        if (cls > clsThreshold) {
+	            System.err.println("Warning: CLS exceeds threshold (" + cls + " > " + clsThreshold + ")");
+	        } else {
+	            System.out.println("CLS is within the threshold: " + cls);
+	        }
+	    }   
+	    
+	    
+	    /**
+	     * This method checks if the current webpage is using HTTPS.
+	     * @param driver The WebDriver instance
+	     * @return true if the page uses HTTPS, false otherwise
+	     */
+	    public boolean isPageUsingHttps(WebDriver driver) {
+	        try {
+	            String currentUrl = driver.getCurrentUrl();
+	            if (currentUrl.startsWith("https")) {
+	                logger.info("The webpage is using HTTPS.");
+	                return true;
+	            } else {
+	               // logger.warn("The webpage is not using HTTPS.");
+	                return false;
+	            }
+	        } catch (Exception e) {
+	            logger.error("Failed to determine if page is using HTTPS: ", e);
+	            return false;
+	        }
+	    }
+
+	    
 }
+

@@ -19,6 +19,7 @@ import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.ITestResult;
 
+@SuppressWarnings("unused")
 public class tv9HomePage_test  extends  BaseClass {
 
 	private static final String URL = "https://www.tv9hindi.com/";//url
@@ -34,6 +35,14 @@ public class tv9HomePage_test  extends  BaseClass {
         getCurrentDateTime();
         logCurrentUrl(driver);
        // printInfo();
+        
+     // Check if the page is using HTTPS
+        if (isPageUsingHttps(driver)) {
+            System.out.println("The page is secure and uses HTTPS.");
+        } else {
+            System.out.println("Warning: The page does not use HTTPS.");
+        }
+    
     }
 	
 	  /*  @Test
@@ -53,111 +62,143 @@ public class tv9HomePage_test  extends  BaseClass {
          * test cases related to tabs in website
          */
 		
-	 @Test(priority = 1)
+	@Test(priority = 1)
+    public void testCoreWebVitals() {
+        System.out.println("Fetching Core Web Vitals...");
+        Map<String, Object> coreWebVitals = getCoreWebVitals(driver);
+
+        // Define acceptable performance thresholds
+        double lcpThreshold = 2500; // 2.5 seconds
+        double fidThreshold = 100;  // 0.1 seconds
+        double clsThreshold = 0.1;  // 0.1
+
+        double lcp = (double) coreWebVitals.getOrDefault("lcp", 0);
+        double fid = (double) coreWebVitals.getOrDefault("fid", 0);
+        double cls = (double) coreWebVitals.getOrDefault("cls", 0);
+
+        // Assert that each metric is within the acceptable threshold
+        Assert.assertTrue(lcp <= lcpThreshold, "LCP exceeds threshold (" + lcp + " ms > " + lcpThreshold + " ms)");
+        Assert.assertTrue(fid <= fidThreshold, "FID exceeds threshold (" + fid + " ms > " + fidThreshold + " ms)");
+        Assert.assertTrue(cls <= clsThreshold, "CLS exceeds threshold (" + cls + " > " + clsThreshold + ")");
+
+        // Print the core web vitals for reference
+        System.out.println("Largest Contentful Paint (LCP): " + lcp + " ms");
+        System.out.println("First Input Delay (FID): " + fid + " ms");
+        System.out.println("Cumulative Layout Shift (CLS): " + cls);
+    }
+	 @Test(priority = 2)
 	    public void testHomePage() {
 	        System.out.println("-----Validating homepage-----");
 	        Assert.assertTrue(driver.getTitle().contains("TV9 Bharatvarsh"), "Homepage title validation failed");
 	    }
 	 
-	 @Test(dependsOnMethods = "testHomePage", priority = 2)
+	 @Test(dependsOnMethods = "testHomePage", priority = 3)
 	    public void testWebStory() {
 	        validateAndClick("a[title='वेब स्टोरी']", "Web Story");
 	    }
-
-
+	 
+	 
+	 @Test(dependsOnMethods = "testHomePage",priority=4)
+	    public void testState() {
+	        validateAndClick("div[class='tv9_catnavbar'] a[title='राज्य']", "State");//state
+	    }
 	   
 	    @Test(dependsOnMethods = "testHomePage" ,priority=5)
 	    public void testNotifications() {
 	        validateAndClick("#notiCount","Notifications");//notification
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage" ,priority=2)
-	    public void testBusiness() {
-	        validateAndClick("a[title='बिजनेस']","Business");//bussiness
-	    }
 
-	    @Test(dependsOnMethods = "testHomePage",priority=4)
-	    public void testState() {
-	        validateAndClick("div[class='tv9_catnavbar'] a[title='राज्य']", "State");//state
-	    }
-
-	    @Test(dependsOnMethods = "testHomePage",priority=3)
+	    @Test(dependsOnMethods = "testHomePage",priority=6)
 	    public void testCountry() {
 	    	validateAndClick("div[class='tv9_catnavbar'] a[title='देश']","Country");//country tab
 	    }
 	    
-	    @Test(dependsOnMethods = "testHomePage", priority= 6)
+	    @Test(dependsOnMethods = "testHomePage", priority= 7)
 	    public void testAutomateLiveTv() throws InterruptedException {
 	    	//Thread.sleep(5000);
 	        automateLiveTv();
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage" , priority= 7)
+	    @Test(dependsOnMethods = "testHomePage" , priority= 8)
 	    public void testElections2024() {
 	    	validateAndClick("a[title='चुनाव 2024']","Elections 2024");//elections tab
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage" , priority=8)
+	    @Test(dependsOnMethods = "testHomePage" , priority=9)
 	    public void testHindiLanguage() {
 	    	validateAndClick("img[title='TV9 Bharatvarsh | Hindi News']", "TV9LOGO");//logo button
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage" , priority=9)
+	    @Test(dependsOnMethods = "testHomePage" , priority=10)
 	    public void testTechnology() {
 	    	validateAndClick("a[title='टेक']","Technology");//technology tab
 	        
 	    }
-
-	    @Test(dependsOnMethods = "testHomePage", priority=10)
-	    public void testWorld() {
-	    	validateAndClick("div[class='tv9_catnavbar'] a[title='दुनिया']","World");//world tab
-	    }
-
-	    @Test(dependsOnMethods = "testHomePage" , priority=12)
-	    public void testActiveVideo() {
-	    	validateAndClick("a[class='active']","video");
-	    }
-
-	    @Test(dependsOnMethods = "testHomePage" , priority=11)
+	   
+	    @Test(dependsOnMethods = "testHomePage" , priority=10)
 	    public void testReligion() {
 	    	validateAndClick("div[class='tv9_catnavbar'] a[title='धर्म']","Religion");//religion tab
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage" , priority=13)
+	    @Test(dependsOnMethods = "testHomePage" , priority=11)
+	    public void testActiveVideo() {
+	    	validateAndClick("a[class='active']","video");
+	    }
+
+	    @Test(dependsOnMethods = "testHomePage" , priority=12)
 	    public void testEducation() {
 	    	validateAndClick("div[class='tv9_catnavbar'] a[title='नॉलेज']","Knowledge");
 	        
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage" , priority=14)
+	    @Test(dependsOnMethods = "testHomePage" , priority=13)
 	    public void testHamburgerMenu() {
 	    	validateAndClick("i:nth-child(3)","Hamburger menu");//hamburger menu
 	    }
 
-	    @Test(dependsOnMethods = "testHamburgerMenu" , priority=15)
+	    @Test(dependsOnMethods = "testHamburgerMenu" , priority=14)
 	    public void testCloseHamburgerMenu() {
 	    	validateAndClick(".close_icon","Close icon on Hamburgre menu");
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage" , priority=16)
+	    @Test(dependsOnMethods = "testHomePage" , priority=15)
 	    public void testHealth() {
 	    	validateAndClick("div[class='tv9_catnavbar'] a[title='हेल्थ']","Health");//health tab
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage" , priority=17)
+	    @Test(dependsOnMethods = "testHomePage" , priority=16)
 	    public void testKnowledge() {
 	    	validateAndClick("div[class='tv9_catnavbar'] a[title='नॉलेज']","Knowledge");//knowledge tab
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage" , priority=18)
+	    @Test(dependsOnMethods = "testHomePage" , priority=17)
 	    public void testSports() {
 	    	validateAndClick("a[title='Sports9']","Sports");//sports tab 
 	    }
 	    
-	    @Test(dependsOnMethods ="testSports" , priority=19)
+	    @Test(dependsOnMethods ="testSports" , priority=18)
 	    public void testSportsLogo() {
 	    	validateAndClick("img[title='Sports 9']","Sports 9 logo");//sports button logo
 	    }
+	    
+	    @Test(dependsOnMethods = "testHomePage" ,priority=19)
+	    public void testBusiness() {
+	        validateAndClick("a[title='बिजनेस']","Business");//bussiness
+	    }
+
+	    @Test(dependsOnMethods = "testHomePage", priority=20)
+	    public void testWorld() {
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='दुनिया']","World");//world tab
+	    }
+	    
+	    @Test(priority = 21)
+	    public void testIsPageUsingHttps() {
+	        Assert.assertTrue(isPageUsingHttps(driver), "The page is not using HTTPS.");
+	        System.out.println("Page is using HTTPS.");
+	    }
+
+
 	    
 	    @AfterMethod
 	    
@@ -247,6 +288,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	    
 	    @AfterSuite
 		public void afterSuite() {
+	    	
 			System.out.println("----- Test Suite Completed -----");
 		}
        
