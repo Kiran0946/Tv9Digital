@@ -28,9 +28,9 @@ public class tv9HomePage_test  extends  BaseClass {
 	
 	public void beforeMethod() {
 		
-	
         driver.get(URL);
         System.out.println("Navigated to URL: " + URL);
+        
         waitForPageload();
         getCurrentDateTime();
         logCurrentUrl(driver);
@@ -94,7 +94,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	 
 	 @Test(dependsOnMethods = "testHomePage", priority = 3)
 	    public void testWebStory() {
-	        validateAndClick("a[title='वेब स्टोरी']", "Web Story");
+	        validateAndClick("a[title='वेब स्टोरी']", "Web Story");//webstory
 	    }
 	 
 	 
@@ -159,7 +159,7 @@ public class tv9HomePage_test  extends  BaseClass {
 
 	    @Test(dependsOnMethods = "testHamburgerMenu" , priority=14)
 	    public void testCloseHamburgerMenu() {
-	    	validateAndClick(".close_icon","Close icon on Hamburgre menu");
+	    	validateAndClick(".close_icon","Close icon on Hamburger menu");
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage" , priority=15)
@@ -273,6 +273,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	            System.out.println("TITLE VERIFICATION SUCCESSFUL");
 	        } else {
 	            System.out.println("TITLE VERIFICATION FAILED");
+	            
 	            takeScreenshot("title-verification-failed.png");
 	        }
 	    }

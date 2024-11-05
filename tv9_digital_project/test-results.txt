@@ -418,3 +418,267 @@ Test Name: testIsPageUsingHttps
 Time Taken: 1730712606 seconds
 Status: PASSED
 -----------------------------------------
+Test Name: testCoreWebVitals
+Time Taken: 1730725954 seconds
+Status: FAILED
+-----------------------------------------
+Test Name: testHomePage
+Time Taken: 1730725957 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testWebStory
+Time Taken: 1730725962 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testState
+Time Taken: 1730725969 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testNotifications
+Time Taken: 1730725972 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testCoreWebVitals
+Time Taken: 1730725976 seconds
+Status: FAILED
+-----------------------------------------
+Test Name: testCountry
+Time Taken: 1730725981 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHomePage
+Time Taken: 1730725988 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testAutomateLiveTv
+Time Taken: 1730725990 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElections2024
+Time Taken: 1730725998 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testWebStory
+Time Taken: 1730726005 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHindiLanguage
+Time Taken: 1730726012 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testReligion
+Time Taken: 1730726018 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testState
+Time Taken: 1730726021 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testTechnology
+Time Taken: 1730726024 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testActiveVideo
+Time Taken: 1730726033 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testNotifications
+Time Taken: 1730726035 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testEducation
+Time Taken: 1730726041 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHamburgerMenu
+Time Taken: 1730726045 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testCountry
+Time Taken: 1730726047 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testCloseHamburgerMenu
+Time Taken: 1730726059 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testAutomateLiveTv
+Time Taken: 1730726064 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHealth
+Time Taken: 1730726065 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testKnowledge
+Time Taken: 1730726072 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElections2024
+Time Taken: 1730726074 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testSports
+Time Taken: 1730726079 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testSportsLogo
+Time Taken: 1730726092 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHindiLanguage
+Time Taken: 1730726096 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testBusiness
+Time Taken: 1730726098 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testReligion
+Time Taken: 1730726106 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testWorld
+Time Taken: 1730726107 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testIsPageUsingHttps
+Time Taken: 1730726111 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testTechnology
+Time Taken: 1730726115 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testActiveVideo
+Time Taken: 1730726120 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testEducation
+Time Taken: 1730726125 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHamburgerMenu
+Time Taken: 1730726128 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testCloseHamburgerMenu
+Time Taken: 1730726141 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHealth
+Time Taken: 1730726146 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testKnowledge
+Time Taken: 1730726155 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testSports
+Time Taken: 1730726162 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testSportsLogo
+Time Taken: 1730726173 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testBusiness
+Time Taken: 1730726178 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testWorld
+Time Taken: 1730726183 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testIsPageUsingHttps
+Time Taken: 1730726187 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testCoreWebVitals
+Time Taken: 1730787197 seconds
+Status: FAILED
+-----------------------------------------
+Test Name: testHomePage
+Time Taken: 1730787199 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testWebStory
+Time Taken: 1730787201 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testState
+Time Taken: 1730787207 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testNotifications
+Time Taken: 1730787209 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testCountry
+Time Taken: 1730787211 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testAutomateLiveTv
+Time Taken: 1730787214 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElections2024
+Time Taken: 1730787217 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHindiLanguage
+Time Taken: 1730787229 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testReligion
+Time Taken: 1730787231 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testTechnology
+Time Taken: 1730787234 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testActiveVideo
+Time Taken: 1730787237 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testEducation
+Time Taken: 1730787239 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHamburgerMenu
+Time Taken: 1730787241 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testCloseHamburgerMenu
+Time Taken: 1730787254 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHealth
+Time Taken: 1730787257 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testKnowledge
+Time Taken: 1730787259 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testSports
+Time Taken: 1730787262 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testSportsLogo
+Time Taken: 1730787274 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testBusiness
+Time Taken: 1730787276 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testWorld
+Time Taken: 1730787278 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testIsPageUsingHttps
+Time Taken: 1730787279 seconds
+Status: PASSED
+-----------------------------------------
