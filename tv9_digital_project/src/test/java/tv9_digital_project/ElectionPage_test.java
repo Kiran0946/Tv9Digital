@@ -47,7 +47,7 @@ public class ElectionPage_test extends BaseClass {
 
 }
 	
-	@Test(priority = 1)
+	@Test(priority = 1 ,retryAnalyzer = tv9_digital_project.RetryAnalyzer.class)
     public void testCoreWebVitals() {
         System.out.println("Fetching Core Web Vitals...");
         Map<String, Object> coreWebVitals = getCoreWebVitals(driver);
@@ -57,9 +57,9 @@ public class ElectionPage_test extends BaseClass {
         double fidThreshold = 100;  // 0.1 seconds
         double clsThreshold = 0.1;  // 0.1
 
-        double lcp = (double) coreWebVitals.getOrDefault("lcp", 0);
-        double fid = (double) coreWebVitals.getOrDefault("fid", 0);
-        double cls = (double) coreWebVitals.getOrDefault("cls", 0);
+        double lcp = ((Number) coreWebVitals.getOrDefault("lcp", 0)).doubleValue();
+        double fid = ((Number) coreWebVitals.getOrDefault("fid", 0)).doubleValue();
+        double cls = ((Number) coreWebVitals.getOrDefault("cls", 0)).doubleValue();
 
         // Assert that each metric is within the acceptable threshold
         Assert.assertTrue(lcp <= lcpThreshold, "LCP exceeds threshold (" + lcp + " ms > " + lcpThreshold + " ms)");

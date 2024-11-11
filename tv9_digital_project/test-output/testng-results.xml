@@ -2,43 +2,54 @@
 <testng-results ignored="10" total="11" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-05T12:08:49 IST" name="Default suite" finished-at="2024-11-05T12:09:07 IST" duration-ms="17948">
+  <suite started-at="2024-11-11T10:38:35 IST" name="Default suite" finished-at="2024-11-11T10:39:18 IST" duration-ms="42359">
     <groups>
     </groups>
-    <test started-at="2024-11-05T12:08:49 IST" name="Default test" finished-at="2024-11-05T12:09:07 IST" duration-ms="17948">
+    <test started-at="2024-11-11T10:38:35 IST" name="Default test" finished-at="2024-11-11T10:39:18 IST" duration-ms="42359">
       <class name="tv9_digital_project.ElectionPage_test">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-05T12:08:49 IST" name="beforeSuite" finished-at="2024-11-05T12:08:49 IST" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-11T10:38:35 IST" name="beforeSuite" finished-at="2024-11-11T10:38:35 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-05T12:08:49 IST" name="setUp" finished-at="2024-11-05T12:08:59 IST" duration-ms="10584" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-11T10:38:35 IST" name="setUp" finished-at="2024-11-11T10:38:42 IST" duration-ms="6874" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-05T12:09:00 IST" name="beforeMethod" finished-at="2024-11-05T12:09:06 IST" duration-ms="6102" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-11T10:38:42 IST" name="beforeMethod" finished-at="2024-11-11T10:38:47 IST" duration-ms="4801" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testElectionHomePage()[pri:2, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-05T12:09:06 IST" name="testElectionHomePage" finished-at="2024-11-05T12:09:06 IST" duration-ms="13" status="PASS">
+        <test-method signature="testCoreWebVitals()[pri:1, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-11T10:38:47 IST" name="testCoreWebVitals" finished-at="2024-11-11T10:39:17 IST" duration-ms="30046" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testElectionHomePage -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-05T12:09:06 IST" name="afterMethod" finished-at="2024-11-05T12:09:06 IST" duration-ms="4" status="PASS">
+        </test-method> <!-- testCoreWebVitals -->
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-11T10:39:17 IST" name="logTestDuration" finished-at="2024-11-11T10:39:17 IST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testElectionHomePage status=SUCCESS method=ElectionPage_test.testElectionHomePage()[pri:2, instance:tv9_digital_project.ElectionPage_test@2c532cd8] output={null}]]]>
+                <![CDATA[[TestResult name=testCoreWebVitals status=SUCCESS method=ElectionPage_test.testCoreWebVitals()[pri:1, instance:tv9_digital_project.ElectionPage_test@2c532cd8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestDuration -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-11T10:39:17 IST" name="afterMethod" finished-at="2024-11-11T10:39:17 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCoreWebVitals status=SUCCESS method=ElectionPage_test.testCoreWebVitals()[pri:1, instance:tv9_digital_project.ElectionPage_test@2c532cd8] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-05T12:09:06 IST" name="tearDown" finished-at="2024-11-05T12:09:07 IST" duration-ms="1213" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-11T10:39:17 IST" name="tearDown" finished-at="2024-11-11T10:39:18 IST" duration-ms="605" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-05T12:09:07 IST" name="afterSuite" finished-at="2024-11-05T12:09:07 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:tv9_digital_project.ElectionPage_test@2c532cd8]" started-at="2024-11-11T10:39:18 IST" name="afterSuite" finished-at="2024-11-11T10:39:18 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

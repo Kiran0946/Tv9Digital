@@ -13,6 +13,11 @@
             <class name="tv9_digital_project.tv9HomePage_test" />
         </classes>
     </test>
+    
+    <listeners>
+    <listener class-name="tv9_digital_project.RetryAnalyzer"/>
+</listeners>
+
     <test name="EdgeTests">
         <parameter name="browser" value="edge" />
         <classes>

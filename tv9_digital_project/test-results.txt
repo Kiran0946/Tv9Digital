@@ -682,3 +682,107 @@ Test Name: testIsPageUsingHttps
 Time Taken: 1730787279 seconds
 Status: PASSED
 -----------------------------------------
+Test Name: testCoreWebVitals
+Time Taken: 1731299235 seconds
+Status: FAILED
+-----------------------------------------
+Test Name: testElectionHomePage
+Time Taken: 1731299237 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElections2024
+Time Taken: 1731299239 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testAssemblyElections
+Time Taken: 1731299243 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testMaharashtra
+Time Taken: 1731299246 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testJharkhand
+Time Taken: 1731299258 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElectionConstituencies
+Time Taken: 1731299261 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElelctionCandidates
+Time Taken: 1731299264 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElectionSchedule
+Time Taken: 1731299267 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testLoksabhaElections
+Time Taken: 1731299271 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElectionParty
+Time Taken: 1731299275 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testCoreWebVitals
+Time Taken: 1731300029 seconds
+Status: FAILED
+-----------------------------------------
+Test Name: testCoreWebVitals
+Time Taken: 1731301388 seconds
+Status: FAILED
+-----------------------------------------
+Test Name: testCoreWebVitals
+Time Taken: 1731301420 seconds
+Status: FAILED
+-----------------------------------------
+Test Name: testCoreWebVitals
+Time Taken: 1731301453 seconds
+Status: FAILED
+-----------------------------------------
+Test Name: testElectionHomePage
+Time Taken: 1731301454 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElections2024
+Time Taken: 1731301458 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testAssemblyElections
+Time Taken: 1731301461 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testMaharashtra
+Time Taken: 1731301465 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testJharkhand
+Time Taken: 1731301477 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElectionConstituencies
+Time Taken: 1731301480 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElelctionCandidates
+Time Taken: 1731301484 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElectionSchedule
+Time Taken: 1731301486 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testLoksabhaElections
+Time Taken: 1731301489 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElectionParty
+Time Taken: 1731301494 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testCoreWebVitals
+Time Taken: 1731301757 seconds
+Status: PASSED
+-----------------------------------------
