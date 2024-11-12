@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
+import javax.xml.xpath.XPath;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -26,7 +28,7 @@ public class ElectionPage_test extends BaseClass {
 	public void beforeMethod() {
 	 
 	   
-	        driver.get(URL);
+	        driver.get(URL);//navigation tom url
 	        System.out.println(" Navigated to URL:  " + URL );
 	        
 	        //Thread.sleep(5000);
@@ -80,58 +82,101 @@ public class ElectionPage_test extends BaseClass {
 	      
 	 @Test(priority= 3)
 	    public void testElections2024() {
-		 validateAndClick("div[class='sp9Navbar_Main'] a[title='चुनाव 2024']","Elections 2024");//elections 2024
+		 validateAndClick("div[class='sp9Navbar_Main'] a[title='चुनाव 2024']","css","Elections 2024");//elections 2024
 	    }
 	 
 	 
 	 @Test(dependsOnMethods = "testElectionHomePage" ,priority =4)
 	 public void testAssemblyElections() {
-		 validateAndClick("div[class='sp9Navbar_Main'] a[title='विधानसभा']","Assembly Elections");//assembly election
+		 validateAndClick("div[class='sp9Navbar_Main'] a[title='विधानसभा']","css","Assembly Elections");//assembly election
 	 }
 	 
 	 
 	 @Test(dependsOnMethods ="testElectionHomePage",priority=5)
 		public void testMaharashtra(){
-		 validateAndClick("div[class='sp9Navbar_Main'] a[title='महाराष्ट्र']","Maharashtra");//Maharashtra
+		 validateAndClick("div[class='sp9Navbar_Main'] a[title='महाराष्ट्र']","css","Maharashtra");//Maharashtra
 	 }
 	 
 	 
 	 @Test(dependsOnMethods ="testElectionHomePage",priority=6)
 		public void testJharkhand(){
-		 validateAndClick("div[class='sp9Navbar_Main'] a[title='झारखण्ड']","Jharkhand");//jharkhand
+		 validateAndClick("div[class='sp9Navbar_Main'] a[title='झारखण्ड']","css","Jharkhand");//jharkhand
 	 }
 	 
 	 
 	 @Test(dependsOnMethods ="testElectionHomePage", priority=7)
 			 public void testElectionConstituencies() {
-		 validateAndClick("div[class='sp9Navbar_Main'] a[title='विधानसभा क्षेत्र']","Election Constituencies");//election constituencies
+		 validateAndClick("div[class='sp9Navbar_Main'] a[title='विधानसभा क्षेत्र']","css","Election Constituencies");//election constituencies
 	 }
 	 
 	 
 	 @Test(dependsOnMethods= "testElectionHomePage" ,priority=8)
 	 public void testElelctionCandidates() {
-		 validateAndClick("div[class='sp9Navbar_Main'] a[title='प्रत्याशी']","Election Candidates");//election candidates
+		 validateAndClick("div[class='sp9Navbar_Main'] a[title='प्रत्याशी']","css","Election Candidates");//election candidates
 	 }
 	 
 	 
 	 @Test(dependsOnMethods ="testElectionHomePage" , priority=9)
 	 public void testElectionSchedule() {
-		 validateAndClick("div[class='sp9Navbar_Main'] a[title='शेड्यूल']","Schedule");//schedule
+		 validateAndClick("div[class='sp9Navbar_Main'] a[title='शेड्यूल']","css","Schedule");//schedule
 	 }
 	 
 	 
 	 @Test(dependsOnMethods ="testElectionHomePage" , priority=10)
 	 public void testLoksabhaElections() {
-		 validateAndClick("div[class='sp9Navbar_Main'] a[title='लोकसभा']","Loksabha Elections");//Loksabha Election
+		 validateAndClick("div[class='sp9Navbar_Main'] a[title='लोकसभा']","css","Loksabha Elections");//Loksabha Election
 	 }
 	 
 	 
 	 @Test(dependsOnMethods ="testElectionHomePage",priority=11)
 	 public void testElectionParty() {
-		 validateAndClick("div[class='sp9Navbar_Main'] a[title='पार्टी']","Election Party");//Election Party
+		 validateAndClick("div[class='sp9Navbar_Main'] a[title='पार्टी']","css","Election Party");//Election Party
 	 }
 	 
+	 @Test(dependsOnMethods ="testElectionHomePage",priority=12)
+	 public void testViewMore() {
+			 validateAndClick("//a[@class='view_more']", "xpath","View More");
+	 }
+	 
+	 
+	/* @Test(dependsOnMethods ="testMaharashtra",priority=13)
+	 
+	 public void testLoadMore() {
+		validateAndClick("#category_more_posts", "css", "Load More"); 
+	 }*/
 	
+	 @Test(dependsOnMethods = "testElectionHomePage", priority = 13)
+	 public void testLoadMore() {
+	     int loadMoreClickCount = 0;
+	     int maxClicks = 15;  // Optional limit to prevent infinite looping
+	     
+	     while (true) {
+	    	 scrollToElement("//button[@id='category_more_posts']", "xpath", driver);
+	    	 boolean isContentLoaded=validateAndClick("//button[@id='category_more_posts']", "xpath", "Load More");
+	                 
+	         // If the "Load More" button was clickable and clicked, counter +
+	         if (isContentLoaded) {
+	             loadMoreClickCount++;
+	             System.out.println("Clicked 'Load More' button---- " + loadMoreClickCount + "- times.");
+
+	             // Optional wait to allow content to load fully before checking the button again
+	             waitForPageload();
+
+	             // Optional limit to prevent infinite looping
+	             if (loadMoreClickCount >= maxClicks) {
+	                 System.out.println("Reached max click limit of " + maxClicks);
+	                 break;
+	             }
+	         } else {
+	             System.out.println("No more content to load or 'Load More' button is unavailable.");
+	             break;
+	         }
+	     }
+
+	     System.out.println("Total 'Load More' clicks performed:-- " + loadMoreClickCount);
+	     Assert.assertTrue(loadMoreClickCount > 0, "'Load More' button was never clicked.");
+	 }
+
 	   @AfterMethod
 	   
 	/* private void performAction(String cssSelector) {
@@ -211,16 +256,26 @@ public class ElectionPage_test extends BaseClass {
 			System.out.println("----- Test Suite Completed -----");
 		}
        
-	    private void validateAndClick(String cssSelector, String elementDescription) {
+	    private boolean validateAndClick(String locator,String locatorType, String elementDescription) {
 	        try {
-	            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)));
+	            WebElement element;
+	            if (locatorType.equalsIgnoreCase("css")) {
+	                element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(locator)));
+	            } else if (locatorType.equalsIgnoreCase("xpath")) {
+	                element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+	            } else {
+	                throw new IllegalArgumentException("Invalid locator type: " + locatorType);
+	            }
 	            element.click();
+	           
 	            System.out.println("Clicked on " + elementDescription);
 	            waitForPageload();
+	            handleAlert(driver, true);
 	        } catch (Exception e) {
 	            System.err.println("Failed to click on " + elementDescription + ": " + e.getMessage());
 	            takeScreenshot("error-" + elementDescription + ".png");
 	        }
+			return false;
 	    }
 	
 	

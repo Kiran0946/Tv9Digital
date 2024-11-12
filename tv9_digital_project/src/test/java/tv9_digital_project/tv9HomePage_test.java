@@ -6,8 +6,10 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -35,6 +37,7 @@ public class tv9HomePage_test  extends  BaseClass {
         getCurrentDateTime();
         logCurrentUrl(driver);
        // printInfo();
+       
         
      // Check if the page is using HTTPS
         if (isPageUsingHttps(driver)) {
@@ -94,24 +97,24 @@ public class tv9HomePage_test  extends  BaseClass {
 	 
 	 @Test(dependsOnMethods = "testHomePage", priority = 3)
 	    public void testWebStory() {
-	        validateAndClick("a[title='वेब स्टोरी']", "Web Story");//webstory
+	        validateAndClick("a[title='वेब स्टोरी']","css", "Web Story");//webstory
 	    }
 	 
 	 
 	 @Test(dependsOnMethods = "testHomePage",priority=4)
 	    public void testState() {
-	        validateAndClick("div[class='tv9_catnavbar'] a[title='राज्य']", "State");//state
+	        validateAndClick("div[class='tv9_catnavbar'] a[title='राज्य']","css","State");//state
 	    }
 	   
 	    @Test(dependsOnMethods = "testHomePage" ,priority=5)
 	    public void testNotifications() {
-	        validateAndClick("#notiCount","Notifications");//notification
+	        validateAndClick("#notiCount","css","Notifications");//notification
 	    }
 
 
 	    @Test(dependsOnMethods = "testHomePage",priority=6)
 	    public void testCountry() {
-	    	validateAndClick("div[class='tv9_catnavbar'] a[title='देश']","Country");//country tab
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='देश']","css","Country");//country tab
 	    }
 	    
 	    @Test(dependsOnMethods = "testHomePage", priority= 7)
@@ -122,80 +125,85 @@ public class tv9HomePage_test  extends  BaseClass {
 
 	    @Test(dependsOnMethods = "testHomePage" , priority= 8)
 	    public void testElections2024() {
-	    	validateAndClick("a[title='चुनाव 2024']","Elections 2024");//elections tab
+	    	validateAndClick("a[title='चुनाव 2024']","css","Elections 2024");//elections tab
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage" , priority=9)
 	    public void testHindiLanguage() {
-	    	validateAndClick("img[title='TV9 Bharatvarsh | Hindi News']", "TV9LOGO");//logo button
+	    	validateAndClick("img[title='TV9 Bharatvarsh | Hindi News']","css", "TV9LOGO");//logo button
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage" , priority=10)
 	    public void testTechnology() {
-	    	validateAndClick("a[title='टेक']","Technology");//technology tab
+	    	validateAndClick("a[title='टेक']","css","Technology");//technology tab
 	        
 	    }
 	   
 	    @Test(dependsOnMethods = "testHomePage" , priority=10)
 	    public void testReligion() {
-	    	validateAndClick("div[class='tv9_catnavbar'] a[title='धर्म']","Religion");//religion tab
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='धर्म']","css","Religion");//religion tab
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage" , priority=11)
 	    public void testActiveVideo() {
-	    	validateAndClick("a[class='active']","video");
+	    	validateAndClick("a[class='active']","css","video");
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage" , priority=12)
 	    public void testEducation() {
-	    	validateAndClick("div[class='tv9_catnavbar'] a[title='नॉलेज']","Knowledge");
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='नॉलेज']","css","Knowledge");
 	        
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage" , priority=13)
 	    public void testHamburgerMenu() {
-	    	validateAndClick("i:nth-child(3)","Hamburger menu");//hamburger menu
+	    	validateAndClick("i:nth-child(3)","css","Hamburger menu");//hamburger menu
 	    }
 
 	    @Test(dependsOnMethods = "testHamburgerMenu" , priority=14)
 	    public void testCloseHamburgerMenu() {
-	    	validateAndClick(".close_icon","Close icon on Hamburger menu");
+	    	validateAndClick(".close_icon","css","Close icon on Hamburger menu");
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage" , priority=15)
 	    public void testHealth() {
-	    	validateAndClick("div[class='tv9_catnavbar'] a[title='हेल्थ']","Health");//health tab
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='हेल्थ']","css","Health");//health tab
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage" , priority=16)
 	    public void testKnowledge() {
-	    	validateAndClick("div[class='tv9_catnavbar'] a[title='नॉलेज']","Knowledge");//knowledge tab
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='नॉलेज']","css","Knowledge");//knowledge tab
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage" , priority=17)
 	    public void testSports() {
-	    	validateAndClick("a[title='Sports9']","Sports");//sports tab 
+	    	validateAndClick("a[title='Sports9']","css","Sports");//sports tab 
 	    }
 	    
 	    @Test(dependsOnMethods ="testSports" , priority=18)
 	    public void testSportsLogo() {
-	    	validateAndClick("img[title='Sports 9']","Sports 9 logo");//sports button logo
+	    	validateAndClick("img[title='Sports 9']","css","Sports 9 logo");//sports button logo
 	    }
 	    
 	    @Test(dependsOnMethods = "testHomePage" ,priority=19)
 	    public void testBusiness() {
-	        validateAndClick("a[title='बिजनेस']","Business");//bussiness
+	        validateAndClick("a[title='बिजनेस']","css","Business");//bussiness
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage", priority=20)
 	    public void testWorld() {
-	    	validateAndClick("div[class='tv9_catnavbar'] a[title='दुनिया']","World");//world tab
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='दुनिया']","css","World");//world tab
 	    }
 	    
 	    @Test(priority = 21)
 	    public void testIsPageUsingHttps() {
 	        Assert.assertTrue(isPageUsingHttps(driver), "The page is not using HTTPS.");
 	        System.out.println("Page is using HTTPS.");
+	    }
+	    
+	    @Test(dependsOnMethods= "testHomePage",priority=22)
+	    public void testViewMore() {
+	    	validateAndClick("//a[@href='/latest-news'][normalize-space()='View more']", "xpath", "View More");
 	    }
 
 
@@ -293,17 +301,52 @@ public class tv9HomePage_test  extends  BaseClass {
 			System.out.println("----- Test Suite Completed -----");
 		}
        
-	    private void validateAndClick(String cssSelector, String elementDescription) {
+	    /**
+		 * Handles alert popup if it appears.
+		 *
+		 * @param acceptAlert if true, the alert will be accepted; if false, it will be dismissed
+		 * @return the text of the alert if present, otherwise null
+		 */
+		/*private String handleAlert(boolean acceptAlert) {
+			try {
+				Alert alert = driver.switchTo().alert();
+				String alertText = alert.getText();
+				if (acceptAlert) {
+					alert.accept();
+					System.out.println("Accepted alert with text: " + alertText);
+				} else {
+					alert.dismiss();
+					System.out.println("Dismissed alert with text: " + alertText);
+				}
+				return alertText;
+			} catch (NoAlertPresentException e) {
+				System.out.println("No alert is present.");
+				return null;
+			}
+		}*/
+	    private void validateAndClick(String locator,String locatorType, String elementDescription) {
 	        try {
-	            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)));
+	            WebElement element;
+	            if (locatorType.equalsIgnoreCase("css")) {
+	                element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(locator)));
+	            } else if (locatorType.equalsIgnoreCase("xpath")) {
+	                element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+	            } else {
+	                throw new IllegalArgumentException("Invalid locator type: " + locatorType);
+	            }
 	            element.click();
+	           
 	            System.out.println("Clicked on " + elementDescription);
 	            waitForPageload();
+	            handleAlert(driver, true);
 	        } catch (Exception e) {
+	        	
 	            System.err.println("Failed to click on " + elementDescription + ": " + e.getMessage());
 	            takeScreenshot("error-" + elementDescription + ".png");
+	     
 	        }
-	    }
 	    
 	  
-	}
+	    }
+	
+}

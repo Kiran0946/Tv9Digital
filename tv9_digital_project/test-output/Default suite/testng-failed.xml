@@ -8,11 +8,12 @@
           <include name="afterMethod"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="testLoadMore"/>
           <include name="beforeSuite"/>
           <include name="beforeMethod"/>
           <include name="logTestDuration"/>
           <include name="afterSuite"/>
-          <include name="testCoreWebVitals"/>
+          <include name="testElectionHomePage"/>
         </methods>
       </class> <!-- tv9_digital_project.ElectionPage_test -->
     </classes>

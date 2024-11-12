@@ -15,8 +15,10 @@ import org.apache.logging.log4j.LogManager;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +28,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.testng.ITestResult;
 import org.apache.logging.log4j.Logger;
 
 
@@ -70,16 +72,19 @@ public class WebDriverUtility {
 				}
 			
 		}
-		public void minimizeWindow(WebDriver driver)
-		{
+		public void minimizeWindow(WebDriver driver) {
+		try{
 			driver.manage().window().minimize();
+		}catch(Exception e) {
+			System.err.println("Windows minimize failed: "+e.getMessage());
 		}
+}
 		/**
 		 * This method will wait for 10 seconds to load the page.
 		 */
 		public void implicitlyWait(WebDriver driver)
 		{
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(22));
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		}
 		
 		
@@ -266,6 +271,34 @@ public class WebDriverUtility {
 	    }
 	    
 	    /**
+	     * Scrolls to the element specified by a CSS or XPath selector.
+	     *
+	     * @param locator      CSS or XPath selector for the element to scroll to.
+	     * @param locatorType  Type of selector: "css" or "xpath".
+	     * @param driver       WebDriver instance.
+	     */
+	    public void scrollToElement(String locator, String locatorType, WebDriver driver) {
+	        try {
+	            WebElement element;
+	            
+	            if (locatorType.equalsIgnoreCase("css")) {
+	                element = driver.findElement(By.cssSelector(locator));
+	            } else if (locatorType.equalsIgnoreCase("xpath")) {
+	                element = driver.findElement(By.xpath(locator));
+	            } else {
+	                throw new IllegalArgumentException("Invalid locator type: " + locatorType);
+	            }
+
+	            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	            System.out.println("Scrolled to element: " + locator + " using " + locatorType + " locator.");
+	        } catch (Exception e) {
+	            System.err.println("Failed to scroll to element: " + locator + ". " + e.getMessage());
+	        }
+	    }
+
+	    
+	    
+	    /**
 	     * This method will write test execution details to a notepad file.
 	     
 	     * @param testName the name of the test
@@ -388,6 +421,42 @@ public class WebDriverUtility {
 	        }
 	    }
 
+	    /*
+	     * This method will accept or dismiss the alert popup if displayed.
+	     * @param driver the WebDriver instance
+         * @param acceptAlert if true, the alert will be accepted; if false, it will be dismissed
+         * @return the text of the alert if present, otherwise returns null
+	     */
+	    
+	    public String handleAlert(WebDriver driver,boolean acceptAlert) {
+	    	try {
+				Alert alert = driver.switchTo().alert();
+				String alertText = alert.getText();
+				if (acceptAlert) {
+					alert.accept();
+					System.out.println("Accepted alert with text: " + alertText);
+				} else {
+					alert.dismiss();
+					System.out.println("Dismissed alert with text: " + alertText);
+				}
+				return alertText;
+			} catch (NoAlertPresentException e) {
+				System.out.println("No alert is present.");
+				return null;
+			}
+	    }
+	    
+/* public void logTestDuration(ITestResult result) {
+	    	
+	        String testName = result.getMethod().getMethodName();
+	        String status = result.isSuccess() ? "PASSED" : "FAILED";
+	        long startTime = 0;
+			long duration =System.currentTimeMillis()-startTime;
+	        writeToNotepad(testName, duration, status);
+	        System.out.println("Test '" + testName + "' status: " + status + ", duration: " + duration + " ms");
+	    }*/
 	    
 }
+	    
+
 
