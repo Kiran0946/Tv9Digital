@@ -100,7 +100,21 @@ public class WebDriverUtility {
 			wait.until(ExpectedConditions.visibilityOf(element));
 		}
 		
-		/**
+		/*
+		 * This method will delete all cookies in a session 
+		 * @param element
+		 */
+		public void mangageCookies(WebDriver driver) {
+			 try {
+		            driver.manage().deleteAllCookies();
+		            System.out.println("All cookies deleted successfully.");
+		        } catch (Exception e) {
+		            System.err.println("Failed to delete cookies: " + e.getMessage());
+		        }
+		    }
+		
+		
+				/**
 		 * This method will handle drop down with the help of index
 		 * @param element
 		 */

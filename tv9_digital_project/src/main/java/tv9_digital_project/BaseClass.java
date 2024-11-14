@@ -88,7 +88,7 @@ public class BaseClass extends WebDriverUtility {
    	public void beforeMethod() {
     	 
            startTime = System.currentTimeMillis(); // Record the start time of each test
-           
+           mangageCookies(driver);
        }
 
     @AfterClass(alwaysRun=true)

@@ -36,6 +36,7 @@ public class tv9HomePage_test  extends  BaseClass {
         waitForPageload();
         getCurrentDateTime();
         logCurrentUrl(driver);
+        
        // printInfo();
        
         
