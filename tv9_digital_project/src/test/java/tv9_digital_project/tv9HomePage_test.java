@@ -31,20 +31,22 @@ public class tv9HomePage_test  extends  BaseClass {
 	public void beforeMethod() {
 		
         driver.get(URL);
-        System.out.println("Navigated to URL: " + URL);
+        System.out.println("Navigated to URL:---\n  "  + URL);
         
         waitForPageload();
         getCurrentDateTime();
         logCurrentUrl(driver);
+        isPageUsingHttps(driver);
         
        // printInfo();
        
         
-     // Check if the page is using HTTPS
+       //Check if the page is using HTTPS
         if (isPageUsingHttps(driver)) {
-            System.out.println("The page is secure and uses HTTPS.");
+            System.out.println("The page is secure and uses HTTPS. \n");
+          //  System.out.println("====================================\n");
         } else {
-            System.out.println("Warning: The page does not use HTTPS.");
+            System.out.println("Warning: The page does not use HTTPS. \n");
         }
     
     }
@@ -68,7 +70,7 @@ public class tv9HomePage_test  extends  BaseClass {
 		
 	@Test(priority = 1)
     public void testCoreWebVitals() {
-        System.out.println("Fetching Core Web Vitals...");
+        System.out.println("---Fetching Core Web Vitals...\n ");
         Map<String, Object> coreWebVitals = getCoreWebVitals(driver);
 
         // Define acceptable performance thresholds
@@ -86,13 +88,14 @@ public class tv9HomePage_test  extends  BaseClass {
         Assert.assertTrue(cls <= clsThreshold, "CLS exceeds threshold (" + cls + " > " + clsThreshold + ")");
 
         // Print the core web vitals for reference
-        System.out.println("Largest Contentful Paint (LCP): " + lcp + " ms");
-        System.out.println("First Input Delay (FID): " + fid + " ms");
-        System.out.println("Cumulative Layout Shift (CLS): " + cls);
+        System.out.println("Largest Contentful Paint (LCP): \n " + lcp + " ms");
+        System.out.println("First Input Delay (FID): \n  " + fid + " ms");
+        System.out.println("Cumulative Layout Shift (CLS): \n " + cls);
     }
 	 @Test(priority = 2)
 	    public void testHomePage() {
-	        System.out.println("-----Validating homepage-----");
+		 System.out.println("=======================");
+	        System.out.println("-----Validating homepage-----\n");
 	        Assert.assertTrue(driver.getTitle().contains("TV9 Bharatvarsh"), "Homepage title validation failed");
 	    }
 	 
@@ -109,7 +112,8 @@ public class tv9HomePage_test  extends  BaseClass {
 	   
 	    @Test(dependsOnMethods = "testHomePage" ,priority=5)
 	    public void testNotifications() {
-	        validateAndClick("#notiCount","css","Notifications");//notification
+	        validateAndClick("#notiCount","css","Notifications \n ");//notification
+	        
 	    }
 
 
@@ -196,10 +200,10 @@ public class tv9HomePage_test  extends  BaseClass {
 	    	validateAndClick("div[class='tv9_catnavbar'] a[title='दुनिया']","css","World");//world tab
 	    }
 	    
-	    @Test(priority = 21)
+	   @Test(priority = 21)
 	    public void testIsPageUsingHttps() {
-	        Assert.assertTrue(isPageUsingHttps(driver), "The page is not using HTTPS.");
-	        System.out.println("Page is using HTTPS.");
+	        Assert.assertTrue(isPageUsingHttps(driver), "The page is not using HTTPS. \n ");
+	        System.out.println("Page is using HTTPS.\n ");
 	    }
 	    
 	    @Test(dependsOnMethods= "testHomePage",priority=22)
@@ -225,10 +229,10 @@ public class tv9HomePage_test  extends  BaseClass {
 	        try {
 	            WebElement liveTv = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Live TV']//*[name()='svg']")));
 	            liveTv.click();
-	            System.out.println("Live TV started.");
+	            System.out.println("Live TV started.\n");
 	            //waitForPageload();
 	        } catch (Exception e) {
-	            System.err.println("Failed to start Live TV: " + e.getMessage());
+	            System.err.println("Failed to start Live TV:\n " + e.getMessage());
 	            takeScreenshot("error-live-tv.png");
 	        }
 	    }
@@ -255,10 +259,10 @@ public class tv9HomePage_test  extends  BaseClass {
 	    @SuppressWarnings("unused")
 		private void printInfo() {
 	        String windowHandle = driver.getWindowHandle();
-	        System.out.println("The handle of the website is: " + windowHandle);
+	        System.out.println("The handle of the website is: \n " + windowHandle);
 
 	        String actualTitle = driver.getTitle();
-	        System.out.println("The title of the webpage is: " + actualTitle);
+	        System.out.println("The title of the webpage is: \n " + actualTitle);
 
 	        String[] keywords = {
 	            "Hindi News",
@@ -279,7 +283,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	        }
 
 	        if (titleMatches) {
-	            System.out.println("TITLE VERIFICATION SUCCESSFUL");
+	            System.out.println("TITLE VERIFICATION SUCCESSFUL \n ");
 	        } else {
 	            System.out.println("TITLE VERIFICATION FAILED");
 	            
@@ -342,7 +346,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	            handleAlert(driver, true);
 	        } catch (Exception e) {
 	        	
-	            System.err.println("Failed to click on " + elementDescription + ": " + e.getMessage());
+	            System.err.println("Failed to click on " + elementDescription + ": \n " + e.getMessage());
 	            takeScreenshot("error-" + elementDescription + ".png");
 	     
 	        }

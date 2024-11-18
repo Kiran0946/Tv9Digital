@@ -31,7 +31,7 @@ public class BaseClass extends WebDriverUtility {
     @BeforeSuite
     public void beforeSuite() {
     	
-        System.out.println("----- Starting Test Suite -----");
+        System.out.println("----- Starting Test Suite ----- \n ");
     }  
     
    
@@ -62,7 +62,7 @@ public class BaseClass extends WebDriverUtility {
     		
                 
     		 default:
-                 throw new IllegalArgumentException("Browser not supported: " + browser);
+                 throw new IllegalArgumentException("Browser not supported: \n " + browser);
          }
         
         maximizeWindow(driver);//maximise window
@@ -70,16 +70,16 @@ public class BaseClass extends WebDriverUtility {
         
         wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         //validation of browser setup
-        System.out.println("Driver Setup complete");
+        System.out.println("Driver Setup complete \n ");
     }
     	catch (Exception e){
-    		System.err.println("Driver setup faied"+e.getMessage());
+    		System.err.println("Driver setup faied \n "+e.getMessage());
     		
     	}
     }
     	 private String promptForBrowser() {
     	        Scanner scanner = new Scanner(System.in);
-    	        System.out.println("Please select a browser (chrome/firefox/edge): ");
+    	        System.out.println("Please select a browser (chrome/firefox/edge): \n ");
     	        return scanner.nextLine(); // Read user input to select browser 
 
     }

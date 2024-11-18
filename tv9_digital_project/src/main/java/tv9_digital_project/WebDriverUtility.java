@@ -413,6 +413,11 @@ public class WebDriverUtility {
 	        }
 	    }   
 	    
+	    /*
+	     * This method checks if the webpage url is http or https
+	     * 
+	     */
+	   
 	    
 	    /**
 	     * This method checks if the current webpage is using HTTPS.

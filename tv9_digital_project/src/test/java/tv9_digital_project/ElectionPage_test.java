@@ -29,22 +29,23 @@ public class ElectionPage_test extends BaseClass {
 	 
 	   
 	        driver.get(URL);//navigation tom url
-	        System.out.println(" Navigated to URL:  " + URL );
+	        System.out.println(" Navigated to URL: \n " + URL );
 	        
 	        //Thread.sleep(5000);
 	        waitForPageload();
 	        
 	        logCurrentUrl(driver);// it will get the url of each page
 	        getCurrentDateTime();
+	        isPageUsingHttps(driver);
 	       // printInfo();
 	    
 	
 	// Check if the page is using HTTPS
 	        
     if (isPageUsingHttps(driver)) {
-        System.out.println("The page is secure and uses HTTPS.");
+        System.out.println("The page is secure and uses HTTPS.\n");
     } else {
-        System.out.println("Warning: The page does not use HTTPS.");
+        System.out.println("Warning: The page does not use HTTPS.\n");
     }
 
 }
