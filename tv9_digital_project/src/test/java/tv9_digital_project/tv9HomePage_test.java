@@ -37,8 +37,9 @@ public class tv9HomePage_test  extends  BaseClass {
         getCurrentDateTime();
         logCurrentUrl(driver);
         isPageUsingHttps(driver);
-        
+       // mouseHoverAction(driver,null);
        // printInfo();
+      //  waitforElementToBeVisible(driver, null);
        
         
        //Check if the page is using HTTPS
@@ -94,32 +95,37 @@ public class tv9HomePage_test  extends  BaseClass {
     }
 	 @Test(priority = 2)
 	    public void testHomePage() {
-		 System.out.println("=======================");
+		    System.out.println("=======================");
 	        System.out.println("-----Validating homepage-----\n");
 	        Assert.assertTrue(driver.getTitle().contains("TV9 Bharatvarsh"), "Homepage title validation failed");
 	    }
 	 
 	 @Test(dependsOnMethods = "testHomePage", priority = 3)
 	    public void testWebStory() {
-	        validateAndClick("a[title='वेब स्टोरी']","css", "Web Story");//webstory
+	      /* WebElement Webstory= */ validateAndClick("a[title='वेब स्टोरी']","css", "Web Story");//webstory
+	       //mouseHoverAction(driver, Webstory);
+	       
+	     //  System.out.println("CLicked on element -- webstory \n");
 	    }
 	 
 	 
 	 @Test(dependsOnMethods = "testHomePage",priority=4)
 	    public void testState() {
-	        validateAndClick("div[class='tv9_catnavbar'] a[title='राज्य']","css","State");//state
+		 WebElement State= validateAndClick("div[class='tv9_catnavbar'] a[title='राज्य']","css","State");//state
+		 mouseHoverAction(driver,State);
 	    }
 	   
 	    @Test(dependsOnMethods = "testHomePage" ,priority=5)
 	    public void testNotifications() {
-	        validateAndClick("#notiCount","css","Notifications \n ");//notification
-	        
+	    /* WebElement Notifications=*/validateAndClick("#notiCount","css","Notifications \n ");//notification
+	   //  mouseHoverAction(driver, Notifications);
 	    }
 
 
 	    @Test(dependsOnMethods = "testHomePage",priority=6)
 	    public void testCountry() {
-	    	validateAndClick("div[class='tv9_catnavbar'] a[title='देश']","css","Country");//country tab
+	   /* WebElement Country=*/	validateAndClick("div[class='tv9_catnavbar'] a[title='देश']","css","Country");//country tab
+	  //  mouseHoverAction(driver, Country);
 	    }
 	    
 	    @Test(dependsOnMethods = "testHomePage", priority= 7)
@@ -310,7 +316,6 @@ public class tv9HomePage_test  extends  BaseClass {
 		 * Handles alert popup if it appears.
 		 *
 		 * @param acceptAlert if true, the alert will be accepted; if false, it will be dismissed
-		 * @return the text of the alert if present, otherwise null
 		 */
 		/*private String handleAlert(boolean acceptAlert) {
 			try {
@@ -329,9 +334,10 @@ public class tv9HomePage_test  extends  BaseClass {
 				return null;
 			}
 		}*/
-	    private void validateAndClick(String locator,String locatorType, String elementDescription) {
+	    private WebElement validateAndClick(String locator,String locatorType, String elementDescription) {
+	    	WebElement element=null;
 	        try {
-	            WebElement element;
+	          
 	            if (locatorType.equalsIgnoreCase("css")) {
 	                element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(locator)));
 	            } else if (locatorType.equalsIgnoreCase("xpath")) {
@@ -339,10 +345,11 @@ public class tv9HomePage_test  extends  BaseClass {
 	            } else {
 	                throw new IllegalArgumentException("Invalid locator type: " + locatorType);
 	            }
-	            element.click();
-	           
+	            element.click();        
 	            System.out.println("Clicked on " + elementDescription);
+	            
 	            waitForPageload();
+	            
 	            handleAlert(driver, true);
 	        } catch (Exception e) {
 	        	
@@ -350,7 +357,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	            takeScreenshot("error-" + elementDescription + ".png");
 	     
 	        }
-	    
+	     return element;
 	  
 	    }
 	

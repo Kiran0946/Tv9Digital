@@ -151,33 +151,47 @@ public class WebDriverUtility {
 		 * @param driver
 		 * @param element
 		 */
-		public void mouseoHoverAction(WebDriver driver,WebElement element)
-		{
-			Actions act= new Actions(driver);
-			act.moveToElement(element).perform();
+		public void mouseHoverAction(WebDriver driver,WebElement element) {
+			try {
+				Actions act= new Actions(driver);
+				act.moveToElement(element).perform();
+				System.out.println("Moved to the element and clicked on the element \n");
+			}
+			catch(Exception e) {
+				System.err.println("Error while moving to the element & clicking \n"+e.getMessage());
+			}
+			
 		}
 		
 		/**
 		 * This method will perform right click action anywhere on a web page
 		 * @param driver
 		 */
-		public void rightClickAction(WebDriver driver)
-		{
+		public void rightClickAction(WebDriver driver){
+		try{
 			Actions act= new Actions(driver);
 			act.contextClick().perform();
-			
+			System.out.println("Right click on the element \n");
 		}
+		catch(Exception e) {
+			System.err.println("Right click on the element failed \n"+e.getMessage());
+		}
+			
+	}
 		
 		/**
 		 * This method will perform double click anywhere on the web page
 		 * @param driver
 		 */
-		public void doubleClickAction(WebDriver driver)
-		{
+		public void doubleClickAction(WebDriver driver){
+		try{
 			Actions act = new Actions(driver);
 			act.doubleClick().perform();
 		}
-		
+		catch(Exception e) {
+			System.err.println("Right click on the element failed \n"+e.getMessage());
+		}
+	}
 		/*
 		 * This method will get the url of each page.
 		 * @param driver

@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -66,7 +67,9 @@ public class BaseClass extends WebDriverUtility {
          }
         
         maximizeWindow(driver);//maximise window
-        
+        System.out.println("Browser selected: " + browser);
+
+
         
         wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         //validation of browser setup
@@ -89,6 +92,7 @@ public class BaseClass extends WebDriverUtility {
     	 
            startTime = System.currentTimeMillis(); // Record the start time of each test
            mangageCookies(driver);
+           
        }
 
     @AfterClass(alwaysRun=true)
