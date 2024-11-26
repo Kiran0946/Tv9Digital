@@ -51,23 +51,6 @@ public class tv9HomePage_test  extends  BaseClass {
         }
     
     }
-	
-	  /*  @Test
-	    public void testHomePage() throws InterruptedException {
-	    	
-	        driver.get(URL);
-	        System.out.println(" Navigated to URL:  " + URL );
-	        //Thread.sleep(5000);
-	        waitForPageload();
-	        //logCurrentUrl(driver);// it will get the url of each page
-	        getCurrentDateTime();
-	        printInfo();
-	    }*/
-
-	  
-        /*
-         * test cases related to tabs in website
-         */
 		
 	@Test(priority = 1)
     public void testCoreWebVitals() {
@@ -242,25 +225,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	            takeScreenshot("error-live-tv.png");
 	        }
 	    }
-
-	  /*  private void performAction(String cssSelector) {
-	        System.out.println("Attempting to click element with selector: " + cssSelector);
-	        boolean actionComplete = clickElement(By.cssSelector(cssSelector));
-	        Assert.assertTrue(actionComplete, "Failed to click on element: " + cssSelector);
-	        waitForPageload();
-	    }*/
-
-	   /* private boolean clickElement(By by) {
-	        try {
-	            wait.until(ExpectedConditions.elementToBeClickable(by)).click();
-	            System.out.println("Element clicked: " + by);
-	            return true;
-	        } catch (Exception e) {
-	            System.err.println("Failed to click on element: " + by + " - " + e.getMessage());
-	            takeScreenshot("error-click-element.png");
-	            return false;
-	        }
-	    }*/
+	    
 
 	    @SuppressWarnings("unused")
 		private void printInfo() {

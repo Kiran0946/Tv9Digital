@@ -1510,3 +1510,7 @@ Test Name: testTechnology
 Time Taken: 1732093697 seconds
 Status: PASSED
 -----------------------------------------
+Test Name: testHomePage
+Time Taken: 1732603798 seconds
+Status: PASSED
+-----------------------------------------

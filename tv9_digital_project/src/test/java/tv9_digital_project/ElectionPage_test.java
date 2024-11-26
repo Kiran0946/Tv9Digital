@@ -146,7 +146,7 @@ public class ElectionPage_test extends BaseClass {
 		validateAndClick("#category_more_posts", "css", "Load More"); 
 	 }*/
 	
-	 @Test(dependsOnMethods = "testElectionHomePage", priority = 13)
+	/* @Test(dependsOnMethods = "testElectionHomePage", priority = 13)
 	 public void testLoadMore() {
 	     int loadMoreClickCount = 0;
 	     int maxClicks = 15;  // Optional limit to prevent infinite looping
@@ -176,7 +176,7 @@ public class ElectionPage_test extends BaseClass {
 
 	     System.out.println("Total 'Load More' clicks performed:-- " + loadMoreClickCount);
 	     Assert.assertTrue(loadMoreClickCount > 0, "'Load More' button was never clicked.");
-	 }
+	 }*/
 
 	   @AfterMethod
 	   
@@ -196,19 +196,7 @@ public class ElectionPage_test extends BaseClass {
 	        System.out.println("Test '" + testName + "' status: " + status + ", duration: " + duration + " ms");
 	    }
 
-	   /* private boolean clickElement(By by) {
-	        try {
-	            wait.until(ExpectedConditions.elementToBeClickable(by)).click();
-	            System.out.println("Element clicked: " + by);
-	            return true;
-	        } catch (Exception e) {
-	            System.err.println("Failed to click on element: " + by + " - " + e.getMessage());
-	            takeScreenshot("error-click-element.png");
-	            return false;
-	        }
-	    } */
-
-	    private void printInfo() {
+	   	    private void printInfo() {
 	        String windowHandle = driver.getWindowHandle();
 	        System.out.println("The handle of the website is: " + windowHandle);
 

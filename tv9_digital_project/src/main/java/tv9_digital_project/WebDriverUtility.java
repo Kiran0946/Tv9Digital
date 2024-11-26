@@ -28,6 +28,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.apache.logging.log4j.Logger;
 
@@ -489,6 +490,47 @@ public class WebDriverUtility {
 	        System.out.println("Test '" + testName + "' status: " + status + ", duration: " + duration + " ms");
 	    }*/
 	    
+	    public void extractComScoreCode(String pageSource)  {
+			
+	        // String pageSource = driver.getPageSource();
+	         
+	         boolean isComscorePresent = pageSource.contains("comscore") || pageSource.contains("cs.");
+	         Assert.assertTrue(isComscorePresent, "Comscore script not found on the page \n");
+
+	         // Print a message if script is found
+	         if (isComscorePresent) {
+	             System.out.println("Comscore script is present on the page. \n");
+	             
+	             int startIndex = pageSource.indexOf("comscore");
+	             int endIndex = pageSource.indexOf("</script>", startIndex)  + "</script>".length();
+	        
+	             if (startIndex != -1 && endIndex != -1) {
+	             //extract & print the comscore script
+	             String comscoreScript = pageSource.substring(startIndex, endIndex);
+	              
+	             // Print the extracted Comscore script
+	             System.out.println("Comscore Script Found:");
+	             System.out.println(comscoreScript);     
+	         }
+	             else {
+	                 System.out.println("Failed to extract Comscore script: Invalid indices.\n");
+	          }
+	        }
+	         
+      }
+	    
+	    public void ItestResult(long startTime) {
+	    	ITestResult result = null;
+	    	 long endTime = System.currentTimeMillis(); // Record the end time of the test
+	         
+			long duration = endTime - startTime; // Calculate the time taken
+
+	         
+			String testName = result.getMethod().getMethodName(); // Get the name of the test
+	         System.out.println("Test '" + testName + "' took " + TimeUnit.MILLISECONDS.toSeconds(duration) + " seconds to execute.");
+	    }
+	     
+
 }
 	    
 

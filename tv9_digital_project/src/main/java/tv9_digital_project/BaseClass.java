@@ -35,8 +35,6 @@ public class BaseClass extends WebDriverUtility {
         System.out.println("----- Starting Test Suite ----- \n ");
     }  
     
-   
-
     @BeforeClass
     
     public void setUp() {
@@ -47,9 +45,9 @@ public class BaseClass extends WebDriverUtility {
     		
     		case  "firefox" : 
     			
-        WebDriverManager.firefoxdriver().setup();// setup browser   
-        driver = new FirefoxDriver();//launch firefox
-        break;
+            WebDriverManager.firefoxdriver().setup();// setup browser   
+            driver = new FirefoxDriver();//launch firefox
+            break;
         
     		case "chrome":
                 WebDriverManager.chromedriver().setup(); // Setup Chrome driver
@@ -60,29 +58,30 @@ public class BaseClass extends WebDriverUtility {
     			WebDriverManager.edgedriver().setup();
     			driver= new EdgeDriver();
     			break;
-    		
-                
+    		    
     		 default:
                  throw new IllegalArgumentException("Browser not supported: \n " + browser);
          }
         
         maximizeWindow(driver);//maximise window
         System.out.println("Browser selected: " + browser);
-
-
         
         wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
+        
         //validation of browser setup
         System.out.println("Driver Setup complete \n ");
     }
+    	
     	catch (Exception e){
     		System.err.println("Driver setup faied \n "+e.getMessage());
     		
     	}
     }
+    
     	 private String promptForBrowser() {
     	        Scanner scanner = new Scanner(System.in);
     	        System.out.println("Please select a browser (chrome/firefox/edge): \n ");
+    	        
     	        return scanner.nextLine(); // Read user input to select browser 
 
     }
@@ -94,31 +93,31 @@ public class BaseClass extends WebDriverUtility {
            mangageCookies(driver);
            
        }
-
-    @AfterClass(alwaysRun=true)
-    public void tearDown() {
-    	
-    	closeBrowser(driver);
-    }
-    protected void waitForPageload() {
-    	
-    	wait.until(webDriver->((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));	
-    	
-    }
     
     @AfterMethod
-    public void afterMethod(ITestResult result) {
+   
+        public void afterMethod(ITestResult result) {
         long endTime = System.currentTimeMillis(); // Record the end time of the test
         long duration = endTime - startTime; // Calculate the time taken
 
         String testName = result.getMethod().getMethodName(); // Get the name of the test
-        System.out.println("Test '" + testName + "' took " + TimeUnit.MILLISECONDS.toSeconds(duration) + " seconds to execute.");
-              
-       
+        System.out.println("Test '" + testName + "' took " + TimeUnit.MILLISECONDS.toSeconds(duration) + " seconds to execute."); 
     }
     
+    
+
+    @AfterClass(alwaysRun=true)
+    public void tearDown() {
+    	closeBrowser(driver);
+    }
+    protected void waitForPageload() {
+   
+    	wait.until(webDriver->((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));	 	
+    }
+    
+   
+     @AfterSuite //(alwaysRun= true)
      
-    @AfterSuite //(alwaysRun= true)
 	public void afterSuite() {
 		System.out.println("----- Test Suite Sucessfully Completed  -----");
 	}
