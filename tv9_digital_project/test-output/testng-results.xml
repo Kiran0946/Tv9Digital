@@ -1,48 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="21" total="23" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-26T14:37:33 IST" name="Default suite" finished-at="2024-11-26T14:37:50 IST" duration-ms="17107">
+  <suite started-at="2024-11-28T17:55:45 IST" name="Default suite" finished-at="2024-11-28T17:56:24 IST" duration-ms="39323">
     <groups>
     </groups>
-    <test started-at="2024-11-26T14:37:33 IST" name="Default test" finished-at="2024-11-26T14:37:50 IST" duration-ms="17107">
-      <class name="tv9_digital_project.Tv9hinditest">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:tv9_digital_project.Tv9hinditest@299321e2]" started-at="2024-11-26T14:37:33 IST" name="beforeSuite" finished-at="2024-11-26T14:37:33 IST" duration-ms="8" status="PASS">
+    <test started-at="2024-11-28T17:55:45 IST" name="Default test" finished-at="2024-11-28T17:56:24 IST" duration-ms="39323">
+      <class name="tv9_digital_project.tv9HomePage_test">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:55:45 IST" name="beforeSuite" finished-at="2024-11-28T17:55:45 IST" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tv9_digital_project.Tv9hinditest@299321e2]" started-at="2024-11-26T14:37:33 IST" name="setUp" finished-at="2024-11-26T14:37:44 IST" duration-ms="10735" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:55:45 IST" name="setUp" finished-at="2024-11-28T17:55:57 IST" duration-ms="12036" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.Tv9hinditest@299321e2]" started-at="2024-11-26T14:37:44 IST" name="beforeMethod" finished-at="2024-11-26T14:37:49 IST" duration-ms="5134" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:55:57 IST" name="beforeMethod" finished-at="2024-11-28T17:56:16 IST" duration-ms="18965" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="extractComScoreCode()[pri:0, instance:tv9_digital_project.Tv9hinditest@299321e2]" started-at="2024-11-26T14:37:49 IST" name="extractComScoreCode" finished-at="2024-11-26T14:37:49 IST" duration-ms="91" status="PASS">
+        <test-method signature="testHomePage()[pri:2, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:56:16 IST" name="testHomePage" finished-at="2024-11-28T17:56:16 IST" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- extractComScoreCode -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.Tv9hinditest@299321e2]" started-at="2024-11-26T14:37:49 IST" name="afterMethod" finished-at="2024-11-26T14:37:49 IST" duration-ms="4" status="PASS">
+        </test-method> <!-- testHomePage -->
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:56:16 IST" name="logTestDuration" finished-at="2024-11-28T17:56:16 IST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=extractComScoreCode status=SUCCESS method=Tv9hinditest.extractComScoreCode()[pri:0, instance:tv9_digital_project.Tv9hinditest@299321e2] output={null}]]]>
+                <![CDATA[[TestResult name=testHomePage status=SUCCESS method=tv9HomePage_test.testHomePage()[pri:2, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestDuration -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:56:16 IST" name="afterMethod" finished-at="2024-11-28T17:56:16 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testHomePage status=SUCCESS method=tv9HomePage_test.testHomePage()[pri:2, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tv9_digital_project.Tv9hinditest@299321e2]" started-at="2024-11-26T14:37:49 IST" name="tearDown" finished-at="2024-11-26T14:37:50 IST" duration-ms="1107" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:56:16 IST" name="beforeMethod" finished-at="2024-11-28T17:56:19 IST" duration-ms="3191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testCountry()[pri:6, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:56:19 IST" name="testCountry" finished-at="2024-11-28T17:56:23 IST" depends-on-methods="tv9_digital_project.tv9HomePage_test.testHomePage" duration-ms="3873" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCountry -->
+        <test-method is-config="true" signature="logTestDuration(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:56:23 IST" name="logTestDuration" finished-at="2024-11-28T17:56:23 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCountry status=SUCCESS method=tv9HomePage_test.testCountry()[pri:6, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestDuration -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:56:23 IST" name="afterMethod" finished-at="2024-11-28T17:56:23 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCountry status=SUCCESS method=tv9HomePage_test.testCountry()[pri:6, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:56:23 IST" name="tearDown" finished-at="2024-11-28T17:56:24 IST" duration-ms="1183" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:tv9_digital_project.Tv9hinditest@299321e2]" started-at="2024-11-26T14:37:50 IST" name="afterSuite" finished-at="2024-11-26T14:37:50 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:tv9_digital_project.tv9HomePage_test@4b2a01d4]" started-at="2024-11-28T17:56:24 IST" name="afterSuite" finished-at="2024-11-28T17:56:24 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- tv9_digital_project.Tv9hinditest -->
+      </class> <!-- tv9_digital_project.tv9HomePage_test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

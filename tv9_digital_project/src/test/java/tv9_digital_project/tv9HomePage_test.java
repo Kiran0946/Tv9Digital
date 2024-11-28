@@ -30,16 +30,22 @@ public class tv9HomePage_test  extends  BaseClass {
 	
 	public void beforeMethod() {
 		
-        driver.get(URL);
-        System.out.println("Navigated to URL:---\n  "  + URL);
+        driver.get(URL);  
+        System.out.println("Navigated to URL:-----  "+ URL);
         
-        waitForPageload();
-        getCurrentDateTime();
-        logCurrentUrl(driver);
-        isPageUsingHttps(driver);
-       // mouseHoverAction(driver,null);
-       // printInfo();
-      //  waitforElementToBeVisible(driver, null);
+        //methods invoked from webdriver class
+        
+        waitForPageload();//wait for the page to load
+        getCurrentDateTime();//get tge current date and time.
+        logCurrentUrl(driver);//log the url of the webpage
+        isPageUsingHttps(driver);//check the url if https
+        extractComScoreCode(driver);//verify the comscore script
+        extractChartbeatCode(driver);//verify the chartbeat script
+        extractIzootoCode(driver);//verify the izooto script
+        extractGoogleManager(driver);//verify gt script
+       //mouseHoverAction(driver,null);
+       //printInfo();
+       //waitforElementToBeVisible(driver, null);
        
         
        //Check if the page is using HTTPS
@@ -83,19 +89,19 @@ public class tv9HomePage_test  extends  BaseClass {
 	        Assert.assertTrue(driver.getTitle().contains("TV9 Bharatvarsh"), "Homepage title validation failed");
 	    }
 	 
-	 @Test(dependsOnMethods = "testHomePage", priority = 3)
+	 @Test(/*dependsOnMethods = "testHomePage"*/ priority = 3)
 	    public void testWebStory() {
 	      /* WebElement Webstory= */ validateAndClick("a[title='वेब स्टोरी']","css", "Web Story");//webstory
 	       //mouseHoverAction(driver, Webstory);
 	       
-	     //  System.out.println("CLicked on element -- webstory \n");
 	    }
 	 
 	 
 	 @Test(dependsOnMethods = "testHomePage",priority=4)
 	    public void testState() {
-		 WebElement State= validateAndClick("div[class='tv9_catnavbar'] a[title='राज्य']","css","State");//state
-		 mouseHoverAction(driver,State);
+		 validateAndClick("div[class='tv9_catnavbar'] a[title='राज्य']","css","State");//state
+		 //mouseHoverAction(driver,State);
+		
 	    }
 	   
 	    @Test(dependsOnMethods = "testHomePage" ,priority=5)
@@ -145,8 +151,7 @@ public class tv9HomePage_test  extends  BaseClass {
 
 	    @Test(dependsOnMethods = "testHomePage" , priority=12)
 	    public void testEducation() {
-	    	validateAndClick("div[class='tv9_catnavbar'] a[title='नॉलेज']","css","Knowledge");
-	        
+	    	validateAndClick("div[class='tv9_catnavbar'] a[title='नॉलेज']","css","Knowledge");     
 	    }
 
 	    @Test(dependsOnMethods = "testHomePage" , priority=13)
@@ -210,7 +215,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	        String status = result.isSuccess() ? "PASSED" : "FAILED";
 	        long duration =System.currentTimeMillis()-startTime;
 	        writeToNotepad(testName, duration, status);
-	        System.out.println("Test '" + testName + "' status: " + status + ", duration: " + duration + " ms");
+	        System.out.println("Test '" + testName + "' status: " + status + ",duration: " + duration + " ms");
 	    }
    
 	  
@@ -236,15 +241,9 @@ public class tv9HomePage_test  extends  BaseClass {
 	        System.out.println("The title of the webpage is: \n " + actualTitle);
 
 	        String[] keywords = {
-	            "Hindi News",
-	            ":हिंदी न्यूज़",
-	            "Latest Hindi News",
-	            "Today Hindi News",
-	            "Breaking News in Hindi",
-	            "हिंदी समाचार | TV9 Bharatvarsh",
-	            "TV9 Bharatvarsh LIVE,Hindi News"
+	            "Hindi News",":हिंदी न्यूज़","Latest Hindi News","Today Hindi News","Breaking News in Hindi",
+	            "हिंदी समाचार | TV9 Bharatvarsh","TV9 Bharatvarsh LIVE,Hindi News"    
 	        };
-
 	        boolean titleMatches = false;
 	        for (String keyword : keywords) {
 	            if (actualTitle.contains(keyword)) {
@@ -254,9 +253,9 @@ public class tv9HomePage_test  extends  BaseClass {
 	        }
 
 	        if (titleMatches) {
-	            System.out.println("TITLE VERIFICATION SUCCESSFUL \n ");
+	            System.out.println("TITLE Verification Sucessful");
 	        } else {
-	            System.out.println("TITLE VERIFICATION FAILED");
+	            System.out.println("TITLE Verification FAILED");
 	            
 	            takeScreenshot("title-verification-failed.png");
 	        }
@@ -273,7 +272,6 @@ public class tv9HomePage_test  extends  BaseClass {
 	    
 	    @AfterSuite
 		public void afterSuite() {
-	    	
 			System.out.println("----- Test Suite Completed -----");
 		}
        

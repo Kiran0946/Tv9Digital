@@ -19,7 +19,7 @@ public class Tv9hinditest extends BaseClass{
 	
         @Test
         
-        public void extractIzootoCode() throws InterruptedException {
+        public void extractIzootoCode(){
 
             // Get the page source
             String pageSource = driver.getPageSource();
@@ -39,7 +39,7 @@ public class Tv9hinditest extends BaseClass{
             }
         }
         
-       @Test
+        @Test
 
         public void extractComScoreCode() throws InterruptedException{
 		
@@ -78,4 +78,5 @@ public class Tv9hinditest extends BaseClass{
                 driver.quit();
             }
         }*/
-   }
+   
+}

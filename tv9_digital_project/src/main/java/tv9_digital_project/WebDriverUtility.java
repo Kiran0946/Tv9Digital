@@ -428,14 +428,9 @@ public class WebDriverUtility {
 	        }
 	    }   
 	    
-	    /*
-	     * This method checks if the webpage url is http or https
-	     * 
-	     */
-	   
-	    
+	        
 	    /**
-	     * This method checks if the current webpage is using HTTPS.
+	     * This method checks if the webpage is using HTTPS.
 	     * @param driver The WebDriver instance
 	     * @return true if the page uses HTTPS, false otherwise
 	     */
@@ -475,12 +470,22 @@ public class WebDriverUtility {
 				}
 				return alertText;
 			} catch (NoAlertPresentException e) {
-				System.out.println("No alert is present.");
+				System.err.println("No alert is present.");
 				return null;
 			}
 	    }
+	   
 	    
-/* public void logTestDuration(ITestResult result) {
+	    public void ItestResult(long startTime) {
+	    	
+	    	ITestResult result = null;
+	    	 long endTime = System.currentTimeMillis(); // Record the end time of the test 
+			long duration = endTime - startTime; // Calculate the time taken
+			String testName = result.getMethod().getMethodName(); // Get the name of the test
+	         System.out.println("Test '" + testName + "' took " + TimeUnit.MILLISECONDS.toSeconds(duration) + "seconds to execute.");
+	    }
+	    
+        /*  public void logTestDuration(ITestResult result) {
 	    	
 	        String testName = result.getMethod().getMethodName();
 	        String status = result.isSuccess() ? "PASSED" : "FAILED";
@@ -490,48 +495,117 @@ public class WebDriverUtility {
 	        System.out.println("Test '" + testName + "' status: " + status + ", duration: " + duration + " ms");
 	    }*/
 	    
-	    public void extractComScoreCode(String pageSource)  {
-			
-	        // String pageSource = driver.getPageSource();
-	         
+	  
+	    /*
+	     * This method will extract & print the comscore code from page sourcecode 
+	     * @param url The URL of the webpage to parse.
+         * @return The content of the comScore script(s) as a String.
+         * @throws IOException If there is an error fetching the URL.
+	     */
+	    public void extractComScoreCode(WebDriver driver)  {
+	          String pageSource = driver.getPageSource();
 	         boolean isComscorePresent = pageSource.contains("comscore") || pageSource.contains("cs.");
 	         Assert.assertTrue(isComscorePresent, "Comscore script not found on the page \n");
-
-	         // Print a message if script is found
+	        
+	         // Check for the comscore code ...
 	         if (isComscorePresent) {
-	             System.out.println("Comscore script is present on the page. \n");
-	             
+	             System.out.println("-----COMSCORE SCRIPT FOUND IN THE SOURCE CODE-----\n");
+	           
+	             //Look for the comscore script..... 
 	             int startIndex = pageSource.indexOf("comscore");
 	             int endIndex = pageSource.indexOf("</script>", startIndex)  + "</script>".length();
-	        
-	             if (startIndex != -1 && endIndex != -1) {
+	             if (startIndex != -1 && endIndex != -1) 
+	             {
 	             //extract & print the comscore script
 	             String comscoreScript = pageSource.substring(startIndex, endIndex);
-	              
 	             // Print the extracted Comscore script
 	             System.out.println("Comscore Script Found:");
-	             System.out.println(comscoreScript);     
+	             System.out.println(comscoreScript);  
 	         }
 	             else {
-	                 System.out.println("Failed to extract Comscore script: Invalid indices.\n");
+	                 System.err.println("Failed to extract Comscore script: Invalid indices.\n");
 	          }
 	        }
-	         
       }
 	    
-	    public void ItestResult(long startTime) {
-	    	ITestResult result = null;
-	    	 long endTime = System.currentTimeMillis(); // Record the end time of the test
-	         
-			long duration = endTime - startTime; // Calculate the time taken
+	    /*
+	     * This method will extract the izooto code from the webpage source code
+	     * @param url The URL of the webpage to parse.
+         * @return The content of the iZooto script(s) as a String.
+         * @throws IOException If there is an error fetching the URL.
+	     */
+	    public void extractIzootoCode(WebDriver driver){
 
-	         
-			String testName = result.getMethod().getMethodName(); // Get the name of the test
-	         System.out.println("Test '" + testName + "' took " + TimeUnit.MILLISECONDS.toSeconds(duration) + " seconds to execute.");
-	    }
-	     
+            // Get the page source
+            String pageSource = driver.getPageSource();
 
-}
+            // Look for iZooto code 
+            if (pageSource.contains("izooto")) {
+                System.out.println("----IZOOTO SCRIPT FOUND IN THE SOURCE CODE------\n");
+                int startIndex = pageSource.indexOf("izooto");
+                int scriptStart = pageSource.lastIndexOf("<script", startIndex);
+                int scriptEnd = pageSource.indexOf("</script>", scriptStart) + "</script>".length();
+        
+                //Exract the izooto code & print it in console
+                String izootoCode = pageSource.substring(scriptStart,scriptEnd);
+                System.out.println(izootoCode);
+            } 
+            else {
+                System.err.println("No iZooto script found in the source code \n");
+            }
+        }
 	    
+	    /*
+	     * This method will extract the chartbeat code from the webpage source code
+	     * @param url The URL of the webpage to parse.
+         * @return The content of the iZooto script(s) as a String.
+         * @throws IOException If there is an error fetching the URL.
+	     */
+	    public void extractChartbeatCode(WebDriver driver) {
+	    	//get the pagesource code
+	    	String pageSource= driver.getPageSource();
+	    	
+	    	//Check for the Chartbeat script 
+	    	if(pageSource.contains("chartbeat")) {
+	    		System.out.println("-----CHARTBEAT SCRIPT FOUND IN THE SOURCE CODE----- \n");
+	    		
+	    		int startIndex = pageSource.indexOf("chartbeat");
+	    		int scriptStart = pageSource.lastIndexOf("<script",startIndex);
+	    		int scriptEnd = pageSource.indexOf("</script>",scriptStart)+ "</script>".length();
+	    		
+	    		//Extract the chartbeat code and print it in console
+	    		String chartBeatCode = pageSource.substring(scriptStart,scriptEnd);
+	    		System.out.println(chartBeatCode);
+	    		}
+	    	else {
+	    		System.err.println("No ChartBeat script found in the source code");
+	    	
+	    	}
+	    }
+	    
+	    public void extractGoogleManager(WebDriver driver) {
+	    	//Get the page source code
+	    	String pageSource=driver.getPageSource();
+	    	if(pageSource.contains("googletagmanager")) {
+	    		
+	    	System.out.println("======GT SCRIPT FOUND IN THE SOURCE CODE======== \n");
+	    	
+	    	//Check for the gt script in the source code
+	    	int startIndex = pageSource.indexOf("googletagmanager");
+	    	int scriptStart = pageSource.lastIndexOf("<script",startIndex);
+	    	int scriptEnd = pageSource.indexOf("</script>",scriptStart)+"</script>".length();
+	    	
+	    	//Extract the gt script from the source code and print it....
+	    	String GoogleTagManager=pageSource.substring(scriptStart,scriptEnd);
+	    	System.out.println(GoogleTagManager);
+	    	}
+	    	else {
+	    		System.err.println("No GT script found in the source code");
+	    	
+	    }
 
+
+    }
+	    
+}
 
