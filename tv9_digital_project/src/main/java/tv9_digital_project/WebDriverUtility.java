@@ -585,6 +585,14 @@ public class WebDriverUtility {
 	    	}
 	    }
 	    
+	    /*
+	     * This method will extract and print the gt script 
+	     * from the source code.
+	     * @param url The URL of the webpage to parse.
+         * @return The content of the iZooto script(s) as a String.
+         * @throws IOException If there is an error fetching the URL.
+	     * 
+	     */
 	    public void extractGoogleManager(WebDriver driver) {
 	    	//Get the page source code
 	    	String pageSource=driver.getPageSource();
