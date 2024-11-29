@@ -22,6 +22,7 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -33,14 +34,11 @@ import org.testng.ITestResult;
 import org.apache.logging.log4j.Logger;
 
 
-
-
 /*
  * THis class contains all the generic methods related to 
  * web driver actions
  * @author 
  */
-@SuppressWarnings("unused")
 
 public class WebDriverUtility {
 	
@@ -53,14 +51,12 @@ public class WebDriverUtility {
 		public void maximizeWindow(WebDriver driver) {
 		try {
 	        driver.manage().window().maximize();
+	       // System.out.println("Windows Maximized");
 	    } catch (Exception e) {
 	        System.err.println("Window maximize failed: " + e.getMessage());
 	    }
 	}
-		/**
-		 * This method will minimize the window
-		 * @param driver
-		 */
+		
 		
 		/**
 		 * This method will get the url to be performed
@@ -70,9 +66,13 @@ public class WebDriverUtility {
 			driver.get(url);
 			} catch (Exception e) {
 				System.err.println("Failed to get url: "+e.getMessage());	
-				}
-			
+				}	
 		}
+		
+		/**
+		 * This method will minimize the window
+		 * @param driver
+		 */
 		public void minimizeWindow(WebDriver driver) {
 		try{
 			driver.manage().window().minimize();
@@ -83,8 +83,7 @@ public class WebDriverUtility {
 		/**
 		 * This method will wait for 10 seconds to load the page.
 		 */
-		public void implicitlyWait(WebDriver driver)
-		{
+		public void implicitlyWait(WebDriver driver) {
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		}
 		
@@ -95,8 +94,7 @@ public class WebDriverUtility {
 		 * @param element
 		 */
 		
-		public void waitforElementToBeVisible(WebDriver driver,WebElement element)
-		{
+		public void waitforElementToBeVisible(WebDriver driver,WebElement element) {
 			WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(20));
 			wait.until(ExpectedConditions.visibilityOf(element));
 		}
@@ -113,25 +111,24 @@ public class WebDriverUtility {
 		            System.err.println("Failed to delete cookies: " + e.getMessage());
 		        }
 		    }
-		
-		
-				/**
+		 
+		/*
 		 * This method will handle drop down with the help of index
 		 * @param element
-		 */
-		public void handleDropdown(WebElement element,int index)
-		{
+		 * @param index
+		 **/
+		public void handleDropdown(WebElement element,int index) {
 			Select s= new Select(element);
 			s.selectByIndex(index);
 		}
 		
-		/**
+		
+		/*
 		 * This method will handle drop down with the help of value
 		 * @param element
 		 * @param value
 		 */
-		public void handleDropdown(WebElement element, String value)
-		{
+		public void handleDropdown(WebElement element, String value) {
 			Select s= new Select(element);
 			s.selectByValue(value);
 		}
@@ -141,8 +138,7 @@ public class WebDriverUtility {
 		 * @param text
 		 * @param element
 		 */
-		public void handleDropdown(String text,WebElement element )
-		{
+		public void handleDropdown(String text,WebElement element ) {
 			Select s= new Select(element);
 			s.selectByVisibleText(text);
 		}
@@ -168,7 +164,7 @@ public class WebDriverUtility {
 		 * This method will perform right click action anywhere on a web page
 		 * @param driver
 		 */
-		public void rightClickAction(WebDriver driver){
+		public void rightClickAction(WebDriver driver) {
 		try{
 			Actions act= new Actions(driver);
 			act.contextClick().perform();
@@ -184,7 +180,7 @@ public class WebDriverUtility {
 		 * This method will perform double click anywhere on the web page
 		 * @param driver
 		 */
-		public void doubleClickAction(WebDriver driver){
+		public void doubleClickAction(WebDriver driver) {
 		try{
 			Actions act = new Actions(driver);
 			act.doubleClick().perform();
@@ -198,10 +194,18 @@ public class WebDriverUtility {
 		 * @param driver
 		 * 
 		 */
-		
-		public void logCurrentUrl(WebDriver driver) {
-			String currentUrl= driver.getCurrentUrl();
-			System.out.println("The current url is-"+ currentUrl);
+		public String logCurrentUrl(WebDriver driver) {
+			if(driver==null) {
+				 throw new IllegalArgumentException("WebDriver instance cannot be null.");
+			}
+			try {
+		        String currentUrl = driver.getCurrentUrl();
+		        System.out.println("Current URL:-- " + currentUrl);
+		        return currentUrl;
+		    } catch (WebDriverException e) {
+		        System.err.println("Failed to retrieve the current URL: " + e.getMessage());
+		        throw e; //
+		    }
 		}
 		
 		/**
@@ -209,8 +213,7 @@ public class WebDriverUtility {
 		 * @param driver
 		 * @param element
 		 */
-		public void doubleClickAction(WebDriver driver, WebElement element)
-		{
+		public void doubleClickAction(WebDriver driver, WebElement element) {
 			Actions act = new Actions(driver);
 			act.doubleClick(element).perform();
 		}
@@ -219,7 +222,7 @@ public class WebDriverUtility {
 			
 			try {
 	            if (driver != null) {
-	                System.out.println("Closing the browser");
+	                System.out.println("Closing the browser \n");
 	                driver.quit();
 	                System.out.println("Browser closed successfully");
 	            } else {
@@ -257,7 +260,7 @@ public class WebDriverUtility {
 	            LocalDateTime now = LocalDateTime.now();
 	            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 	            String formattedDateTime = now.format(formatter);
-	            System.out.println("Current Date and Time: " + formattedDateTime);
+	            System.out.println("Current Date and Time:-- " + formattedDateTime);
 	            return formattedDateTime;
 	        } catch (Exception e) {
 	            System.err.println("Error getting current date and time: " + e.getMessage());
@@ -519,8 +522,7 @@ public class WebDriverUtility {
 	             //extract & print the comscore script
 	             String comscoreScript = pageSource.substring(startIndex, endIndex);
 	             // Print the extracted Comscore script
-	             System.out.println("Comscore Script Found:");
-	             System.out.println(comscoreScript);  
+	            // System.out.println(comscoreScript);  
 	         }
 	             else {
 	                 System.err.println("Failed to extract Comscore script: Invalid indices.\n");
@@ -548,7 +550,7 @@ public class WebDriverUtility {
         
                 //Exract the izooto code & print it in console
                 String izootoCode = pageSource.substring(scriptStart,scriptEnd);
-                System.out.println(izootoCode);
+                //System.out.println(izootoCode);
             } 
             else {
                 System.err.println("No iZooto script found in the source code \n");
@@ -575,7 +577,7 @@ public class WebDriverUtility {
 	    		
 	    		//Extract the chartbeat code and print it in console
 	    		String chartBeatCode = pageSource.substring(scriptStart,scriptEnd);
-	    		System.out.println(chartBeatCode);
+	    		//System.out.println(chartBeatCode);
 	    		}
 	    	else {
 	    		System.err.println("No ChartBeat script found in the source code");
@@ -597,7 +599,7 @@ public class WebDriverUtility {
 	    	
 	    	//Extract the gt script from the source code and print it....
 	    	String GoogleTagManager=pageSource.substring(scriptStart,scriptEnd);
-	    	System.out.println(GoogleTagManager);
+	    	//System.out.println(GoogleTagManager);
 	    	}
 	    	else {
 	    		System.err.println("No GT script found in the source code");

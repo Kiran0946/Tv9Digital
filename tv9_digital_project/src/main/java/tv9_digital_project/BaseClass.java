@@ -31,7 +31,7 @@ public class BaseClass extends WebDriverUtility {
     
     @BeforeSuite
     public void beforeSuite() {
-        System.out.println("----- Starting Test Suite ----- \n ");
+        System.out.println("====== Starting Test Suite ======\n ");
     }  
     
     @BeforeClass
@@ -62,22 +62,20 @@ public class BaseClass extends WebDriverUtility {
         
         maximizeWindow(driver);//maximise window
         System.out.println("Browser selected:--" + browser);
-        
         wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         
         //validation of browser setup
         System.out.println("Driver setup Complete \n ");
-    }
-    	
+        }
     	catch (Exception e){
-    		System.err.println("Driver setup faied \n "+e.getMessage());
+    	System.err.println("Driver setup faied \n "+e.getMessage());
     		
     	}
     }
     	 private String promptForBrowser() {
-    	        Scanner scanner = new Scanner(System.in);
-    	        System.out.println("Please select a browser (chrome/firefox/edge): \n ");     
-    	        return scanner.nextLine(); // Read user input to select browser 
+    	      Scanner scanner = new Scanner(System.in);
+    	      System.out.println("Please select a browser (chrome/firefox/edge):---- ");     
+    	      return scanner.nextLine(); // Read user input to select browser 
     }
     
     @BeforeMethod
@@ -87,7 +85,6 @@ public class BaseClass extends WebDriverUtility {
        }
     
     @AfterMethod
-    
         public void afterMethod(ITestResult result) {
         long endTime = System.currentTimeMillis(); // Record the end time of the test
         long duration = endTime - startTime; // Calculate the time taken
@@ -95,8 +92,6 @@ public class BaseClass extends WebDriverUtility {
         System.out.println("Test '" + testName + "' took " + TimeUnit.MILLISECONDS.toSeconds(duration) + " seconds to execute."); 
     }    
     
-    
-
     @AfterClass(alwaysRun=true)
     
     public void tearDown() {

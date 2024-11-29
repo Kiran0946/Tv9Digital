@@ -7,13 +7,12 @@
         <methods>
           <include name="afterMethod"/>
           <include name="setUp"/>
-          <include name="testCountry"/>
           <include name="tearDown"/>
           <include name="beforeSuite"/>
           <include name="logTestDuration"/>
           <include name="beforeMethod"/>
           <include name="afterSuite"/>
-          <include name="testHomePage"/>
+          <include name="testCoreWebVitals"/>
         </methods>
       </class> <!-- tv9_digital_project.tv9HomePage_test -->
     </classes>

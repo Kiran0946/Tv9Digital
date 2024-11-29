@@ -49,12 +49,12 @@ public class tv9HomePage_test  extends  BaseClass {
        
         
        //Check if the page is using HTTPS
-        if (isPageUsingHttps(driver)) {
+       /* if (isPageUsingHttps(driver)) {
             System.out.println("The page is secure and uses HTTPS. \n");
           //  System.out.println("====================================\n");
         } else {
             System.out.println("Warning: The page does not use HTTPS. \n");
-        }
+        }*/
     
     }
 		
