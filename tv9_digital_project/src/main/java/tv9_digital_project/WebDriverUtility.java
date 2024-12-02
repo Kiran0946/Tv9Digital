@@ -194,11 +194,15 @@ public class WebDriverUtility {
 		 * @param driver
 		 * 
 		 */
+		
 		public String logCurrentUrl(WebDriver driver) {
 			if(driver==null) {
 				 throw new IllegalArgumentException("WebDriver instance cannot be null.");
 			}
 			try {
+				WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(10));
+				//WebDriverWait wait = new WebDriverWait(driver,10);
+			    wait.until(ExpectedConditions.jsReturnsValue("return document.readyState =='complete'"));
 		        String currentUrl = driver.getCurrentUrl();
 		        System.out.println("Current URL:-- " + currentUrl);
 		        return currentUrl;
@@ -222,14 +226,14 @@ public class WebDriverUtility {
 			
 			try {
 	            if (driver != null) {
-	                System.out.println("Closing the browser \n");
+	                System.out.println("Closing the browser");
 	                driver.quit();
 	                System.out.println("Browser closed successfully");
 	            } else {
-	                System.err.println("Driver is null, cannot close the browser");
+	                System.err.println("Driver is null,cannot close the browser");
 	            }
 	        } catch (Exception e) {
-	            System.err.println("Error while closing the browser: " + e.getMessage());
+	            System.err.println("Error while closing the browser:" + e.getMessage());
 	        }
 	    }
 		
@@ -354,11 +358,9 @@ public class WebDriverUtility {
 	    //using string.join get core web vitals
 	    
 	    public Map<String, Object> getCoreWebVitals(WebDriver driver) {
-	        
 	    	Map<String, Object> coreWebVitals = new HashMap<>();
-
 	        String script = String.join("",
-	            "const vitals = { lcp: 0, fid: 0, cls: 0 };",
+	            "const vitals = { lcp:0,fid:0,cls:0 };",
 	            
 	            "const performanceObserver = new PerformanceObserver((list) => {",
 	            "    for (const entry of list.getEntries()) {",
@@ -370,7 +372,7 @@ public class WebDriverUtility {
 	            "        }",
 	            "    }",
 	            "});",
-	            
+	        
 	            "const layoutShiftObserver = new PerformanceObserver((list) => {",
 	            "    list.getEntries().forEach((entry) => {",
 	            "        if (!entry.hadRecentInput) {",
@@ -382,12 +384,10 @@ public class WebDriverUtility {
 	            "performanceObserver.observe({ type: 'largest-contentful-paint', buffered: true });",
 	            "performanceObserver.observe({ type: 'first-input', buffered: true });",
 	            "layoutShiftObserver.observe({ type: 'layout-shift', buffered: true });",
-	            
 	            "return new Promise(resolve => {",
-	            "    setTimeout(() => resolve(vitals), 5000);", // Wait 5 seconds to gather data
+	            "    setTimeout(() => resolve(vitals), 8000);", // Wait 5 seconds to gather data
 	            "});"
 	        );
-
 	        JavascriptExecutor js = (JavascriptExecutor) driver;
 	        try {
 	            coreWebVitals = (Map<String, Object>) js.executeAsyncScript(script);
@@ -398,7 +398,6 @@ public class WebDriverUtility {
 	        } catch (Exception e) {
 	            System.err.println("Failed to retrieve Core Web Vitals: " + e.getMessage());
 	        }
-	        
 	        return coreWebVitals;
 	    }
 
@@ -408,9 +407,9 @@ public class WebDriverUtility {
 	        double fidThreshold = 100;  // 0.1 seconds
 	        double clsThreshold = 0.1;  // 0.1
 
-	        double lcp = (double) coreWebVitals.getOrDefault("lcp", 0);
-	        double fid = (double) coreWebVitals.getOrDefault("fid", 0);
-	        double cls = (double) coreWebVitals.getOrDefault("cls", 0);
+	        double lcp = (double) coreWebVitals.getOrDefault("lcp", -1);
+	        double fid = (double) coreWebVitals.getOrDefault("fid", -1);
+	        double cls = (double) coreWebVitals.getOrDefault("cls", -1);
 
 	        if (lcp > lcpThreshold) {
 	            System.err.println("Warning: LCP exceeds threshold (" + lcp + " ms > " + lcpThreshold + " ms)");
@@ -598,7 +597,7 @@ public class WebDriverUtility {
 	    	String pageSource=driver.getPageSource();
 	    	if(pageSource.contains("googletagmanager")) {
 	    		
-	    	System.out.println("======GT SCRIPT FOUND IN THE SOURCE CODE======== \n");
+	    	System.out.println("-----GT SCRIPT FOUND IN THE SOURCE CODE----- \n");
 	    	
 	    	//Check for the gt script in the source code
 	    	int startIndex = pageSource.indexOf("googletagmanager");
@@ -610,12 +609,8 @@ public class WebDriverUtility {
 	    	//System.out.println(GoogleTagManager);
 	    	}
 	    	else {
-	    		System.err.println("No GT script found in the source code");
-	    	
+	    		System.err.println("No GT script found in the source code");  	
 	    }
-
-
-    }
-	    
+    }    
 }
 

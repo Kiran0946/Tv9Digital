@@ -41,7 +41,7 @@ public class Tv9hinditest extends BaseClass{
         
         @Test
 
-        public void extractComScoreCode() throws InterruptedException{
+       public void extractComScoreCode() throws InterruptedException{
 		
          String Pagesource = driver.getPageSource();
         

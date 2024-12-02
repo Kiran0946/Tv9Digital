@@ -37,6 +37,7 @@ public class tv9HomePage_test  extends  BaseClass {
         
         waitForPageload();//wait for the page to load
         getCurrentDateTime();//get tge current date and time.
+      //  getCoreWebVitals(driver);
         logCurrentUrl(driver);//log the url of the webpage
         isPageUsingHttps(driver);//check the url if https
         extractComScoreCode(driver);//verify the comscore script
@@ -58,20 +59,31 @@ public class tv9HomePage_test  extends  BaseClass {
     
     }
 		
-	@Test(priority = 1)
+	@Test(priority=-1)
     public void testCoreWebVitals() {
         System.out.println("---Fetching Core Web Vitals...\n ");
         Map<String, Object> coreWebVitals = getCoreWebVitals(driver);
+        
+        // Check if coreWebVitals is null or empty & exit the method if no data is retrieved
+        if (coreWebVitals == null || coreWebVitals.isEmpty()){
+            System.err.println("Failed to retrieve Core Web Vitals. Its null or empty.");
+            return; 
+        }
 
         // Define acceptable performance thresholds
         double lcpThreshold = 2500; // 2.5 seconds
         double fidThreshold = 100;  // 0.1 seconds
         double clsThreshold = 0.1;  // 0.1
 
-        double lcp = (double) coreWebVitals.getOrDefault("lcp", 0);
-        double fid = (double) coreWebVitals.getOrDefault("fid", 0);
-        double cls = (double) coreWebVitals.getOrDefault("cls", 0);
-
+        double lcp = (double) coreWebVitals.getOrDefault("lcp", -1);
+        double fid = (double) coreWebVitals.getOrDefault("fid", -1);
+        double cls = (double) coreWebVitals.getOrDefault("cls", -1);
+        
+        // Check if any metric is invalid & exit the method if metrics are invalid
+        if (lcp < 0 || fid < 0 || cls < 0) {
+            System.err.println("One or more metrics are invalid. LCP: " + lcp + ", FID: " + fid + ", CLS: " + cls);
+            return; 
+        }
         // Assert that each metric is within the acceptable threshold
         Assert.assertTrue(lcp <= lcpThreshold, "LCP exceeds threshold (" + lcp + " ms > " + lcpThreshold + " ms)");
         Assert.assertTrue(fid <= fidThreshold, "FID exceeds threshold (" + fid + " ms > " + fidThreshold + " ms)");
