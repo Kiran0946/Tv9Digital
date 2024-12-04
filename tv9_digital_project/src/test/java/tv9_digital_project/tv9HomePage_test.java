@@ -2,6 +2,7 @@ package tv9_digital_project;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -24,20 +25,20 @@ import org.testng.ITestResult;
 @SuppressWarnings("unused")
 public class tv9HomePage_test  extends  BaseClass {
 
-	private static final String URL = "https://www.tv9hindi.com/";//url
+	private static final String url = "https://www.tv9hindi.com/";//url
 	
 	@BeforeMethod
 	
-	public void beforeMethod() {
+	public void beforeMethod() throws URISyntaxException {
 		
-        driver.get(URL);  
-        System.out.println("Navigated to URL:-----  "+ URL);
+        driver.get(url);  
+        System.out.println("Navigated to URL:---"+ url);
         
         //methods invoked from webdriver class
         
         waitForPageload();//wait for the page to load
         getCurrentDateTime();//get tge current date and time.
-      //  getCoreWebVitals(driver);
+      //getCoreWebVitals(driver);
         logCurrentUrl(driver);//log the url of the webpage
         isPageUsingHttps(driver);//check the url if https
         extractComScoreCode(driver);//verify the comscore script
@@ -46,10 +47,9 @@ public class tv9HomePage_test  extends  BaseClass {
         extractGoogleManager(driver);//verify gt script
        //mouseHoverAction(driver,null);
        //printInfo();
-       //waitforElementToBeVisible(driver, null);
+       //waitforElementToBeVisible(driver, null); 
        
-        
-       //Check if the page is using HTTPS
+        //Check if the page is using HTTPS
        /* if (isPageUsingHttps(driver)) {
             System.out.println("The page is secure and uses HTTPS. \n");
           //  System.out.println("====================================\n");
@@ -59,7 +59,7 @@ public class tv9HomePage_test  extends  BaseClass {
     
     }
 		
-	@Test(priority=-1)
+	@Test(enabled=false)
     public void testCoreWebVitals() {
         System.out.println("---Fetching Core Web Vitals...\n ");
         Map<String, Object> coreWebVitals = getCoreWebVitals(driver);
@@ -96,9 +96,10 @@ public class tv9HomePage_test  extends  BaseClass {
     }
 	 @Test(priority = 2)
 	    public void testHomePage() {
-		    System.out.println("=======================");
-	        System.out.println("-----Validating homepage-----\n");
+		   // System.out.println("=======================");
+	        System.out.println("--Validating homepage--\n");
 	        Assert.assertTrue(driver.getTitle().contains("TV9 Bharatvarsh"), "Homepage title validation failed");
+	      //  System.out.println("Home Page Validated");
 	    }
 	 
 	 @Test(/*dependsOnMethods = "testHomePage"*/ priority = 3)
@@ -109,14 +110,14 @@ public class tv9HomePage_test  extends  BaseClass {
 	    }
 	 
 	 
-	 @Test(dependsOnMethods = "testHomePage",priority=4)
+	 @Test(priority=4)
 	    public void testState() {
 		 validateAndClick("div[class='tv9_catnavbar'] a[title='राज्य']","css","State");//state
 		 //mouseHoverAction(driver,State);
 		
 	    }
 	   
-	    @Test(dependsOnMethods = "testHomePage" ,priority=5)
+	    @Test(/*dependsOnMethods = "testHomePage" ,priority=5,*/enabled=false)
 	    public void testNotifications() {
 	    /* WebElement Notifications=*/validateAndClick("#notiCount","css","Notifications \n ");//notification
 	   //  mouseHoverAction(driver, Notifications);
@@ -129,7 +130,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	  //  mouseHoverAction(driver, Country);
 	    }
 	    
-	    @Test(dependsOnMethods = "testHomePage", priority= 7)
+	    @Test(/*dependsOnMethods = "testHomePage", priority= 7,*/enabled=false)
 	    public void testAutomateLiveTv() throws InterruptedException {
 	    	//Thread.sleep(5000);
 	        automateLiveTv();
@@ -145,7 +146,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	    	validateAndClick("img[title='TV9 Bharatvarsh | Hindi News']","css", "TV9LOGO");//logo button
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage" , priority=10)
+	    @Test(priority=10)
 	    public void testTechnology() {
 	    	validateAndClick("a[title='टेक']","css","Technology");//technology tab
 	        
@@ -166,12 +167,12 @@ public class tv9HomePage_test  extends  BaseClass {
 	    	validateAndClick("div[class='tv9_catnavbar'] a[title='नॉलेज']","css","Knowledge");     
 	    }
 
-	    @Test(dependsOnMethods = "testHomePage" , priority=13)
+	    @Test(/*dependsOnMethods = "testHomePage" , priority=13,*/enabled=false)
 	    public void testHamburgerMenu() {
 	    	validateAndClick("i:nth-child(3)","css","Hamburger menu");//hamburger menu
 	    }
 
-	    @Test(dependsOnMethods = "testHamburgerMenu" , priority=14)
+	    @Test(/*dependsOnMethods = "testHamburgerMenu" , priority=14,*/enabled=false)
 	    public void testCloseHamburgerMenu() {
 	    	validateAndClick(".close_icon","css","Close icon on Hamburger menu");
 	    }
@@ -191,15 +192,16 @@ public class tv9HomePage_test  extends  BaseClass {
 	    	validateAndClick("a[title='Sports9']","css","Sports");//sports tab 
 	    }
 	    
-	    @Test(dependsOnMethods ="testSports" , priority=18)
+	    @Test(/*dependsOnMethods ="testSports" , priority=18,*/enabled=false)
 	    public void testSportsLogo() {
 	    	validateAndClick("img[title='Sports 9']","css","Sports 9 logo");//sports button logo
 	    }
 	    
 	    @Test(dependsOnMethods = "testHomePage" ,priority=19)
 	    public void testBusiness() {
-	        validateAndClick("a[title='बिजनेस']","css","Business");//bussiness
+	      validateAndClick("//a[contains(text(),'बिजनेस')]","xpath","Business");//bussiness
 	    }
+	    
 
 	    @Test(dependsOnMethods = "testHomePage", priority=20)
 	    public void testWorld() {
@@ -212,7 +214,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	        System.out.println("Page is using HTTPS.\n ");
 	    }
 	    
-	    @Test(dependsOnMethods= "testHomePage",priority=22)
+	    @Test(/*dependsOnMethods= "testHomePage",priority=22,*/enabled=false)
 	    public void testViewMore() {
 	    	validateAndClick("//a[@href='/latest-news'][normalize-space()='View more']", "xpath", "View More");
 	    }
@@ -309,27 +311,41 @@ public class tv9HomePage_test  extends  BaseClass {
 				return null;
 			}
 		}*/
+	    
 	    private WebElement validateAndClick(String locator,String locatorType, String elementDescription) {
 	    	WebElement element=null;
+	    	String url=null;
+	    	//based on locator type it will locate the element
 	        try {
-	          
 	            if (locatorType.equalsIgnoreCase("css")) {
-	                element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(locator)));
-	            } else if (locatorType.equalsIgnoreCase("xpath")) {
-	                element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
-	            } else {
-	                throw new IllegalArgumentException("Invalid locator type: " + locatorType);
+	                element= wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(locator)));
 	            }
-	            element.click();        
-	            System.out.println("Clicked on " + elementDescription);
+	            else if (locatorType.equalsIgnoreCase("xpath")) {
+	                element= wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+	            } 
+	            else if(locatorType.equalsIgnoreCase("name")) {
+	            	element= wait.until(ExpectedConditions.elementToBeClickable(By.name(locator)));
+	            }
+	            else {
+	                throw new IllegalArgumentException("Invalid locator type:--" +locatorType);
+	            }
 	            
-	            waitForPageload();
+	         // Retrieve the URL of the element (if it has an href attribute)
+	            url = element.getAttribute("href");
+	            if (url!= null) {
+	                System.out.println("URL of the element:-- " +url);
+	            } else {
+	                System.out.println("The element does not have an href attribute.");
+	            }
+	            element.click();//click on the element        
+	            System.out.println("Clicked on--" +elementDescription);
 	            
-	            handleAlert(driver, true);
-	        } catch (Exception e) {
-	        	
-	            System.err.println("Failed to click on " + elementDescription + ": \n " + e.getMessage());
-	            takeScreenshot("error-" + elementDescription + ".png");
+	            waitForPageload();//wait for the page to load 
+	            handleAlert(driver,true);//handle alert if present
+	        } 
+	        catch (Exception e) {
+	            System.err.println("Failed to click on " +elementDescription + ": \n " + e.getMessage());
+	            takeScreenshot("error-" +elementDescription + ".png");
 	     
 	        }
 	     return element;

@@ -12,7 +12,8 @@
           <include name="logTestDuration"/>
           <include name="beforeMethod"/>
           <include name="afterSuite"/>
-          <include name="testCoreWebVitals"/>
+          <include name="testBusiness"/>
+          <include name="testHomePage"/>
         </methods>
       </class> <!-- tv9_digital_project.tv9HomePage_test -->
     </classes>

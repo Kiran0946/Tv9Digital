@@ -1,5 +1,6 @@
 package tv9_digital_project;
 
+import java.net.URISyntaxException;
 import java.time.Duration;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -42,7 +43,7 @@ public class BaseClass extends WebDriverUtility {
     		switch(browser.toLowerCase()) {
     		
     		case  "firefox" : 	
-            WebDriverManager.firefoxdriver().setup();// setup browser   
+            WebDriverManager.firefoxdriver().setup();// setup  browser   
             driver = new FirefoxDriver();//launch firefox
             break;
         
@@ -79,7 +80,7 @@ public class BaseClass extends WebDriverUtility {
     }
     
     @BeforeMethod
-   	public void beforeMethod() {
+   	public void beforeMethod() throws URISyntaxException  {
            startTime = System.currentTimeMillis(); // Record the start time of each test
            mangageCookies(driver);
        }
@@ -98,7 +99,6 @@ public class BaseClass extends WebDriverUtility {
     	closeBrowser(driver);
     }
     protected void waitForPageload() {
-   
     	wait.until(webDriver->((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));	 	
     }
     

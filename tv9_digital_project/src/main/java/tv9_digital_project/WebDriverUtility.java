@@ -4,6 +4,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.MalformedURLException;
 import java.sql.Driver;
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -400,7 +405,11 @@ public class WebDriverUtility {
 	        }
 	        return coreWebVitals;
 	    }
-
+	    
+	    /*
+	     * This method will validate core web vitals of the webpage.
+	     */
+        
 	    private void validateCoreWebVitals(Map<String, Object> coreWebVitals) {
 	        // Recommended thresholds for Web Vitals
 	        double lcpThreshold = 2500; // 2.5 seconds
@@ -504,16 +513,32 @@ public class WebDriverUtility {
          * @return The content of the comScore script(s) as a String.
          * @throws IOException If there is an error fetching the URL.
 	     */
-	    public void extractComScoreCode(WebDriver driver)  {
-	          String pageSource = driver.getPageSource();
-	         boolean isComscorePresent = pageSource.contains("comscore") || pageSource.contains("cs.");
-	         Assert.assertTrue(isComscorePresent, "Comscore script not found on the page \n");
+	    public void extractComScoreCode(WebDriver driver) throws URISyntaxException {
+	    
+	    	 String pageUrl=driver.getCurrentUrl();
+	    	 if (pageUrl == null || pageUrl.isEmpty()) {
+	    	 System.err.println("Page URL is null or empty"); 
+	         }
+	    	// System.out.println("Page URL is:-- " +pageUrl);
+	    	 
+	    	// Get the HTTP response code and response time
+            long startTime = System.currentTimeMillis();
+            int responseCode = getResponseCode(pageUrl);
+            long responseTime = System.currentTimeMillis()-startTime;
+            System.out.println("Response Code for Comscore script:--" + responseCode);
+          //System.out.println("Response Time for Comscore script:-- " + responseTime +"ms");
+            
+            
+            //comscore
+	        String pageSource = driver.getPageSource();
+	        boolean isComscorePresent = pageSource.contains("comscore") || pageSource.contains("cs.");
+	        Assert.assertTrue(isComscorePresent, "Comscore script not found \n");
 	        
-	         // Check for the comscore code ...
-	         if (isComscorePresent) {
-	             System.out.println("-----COMSCORE SCRIPT FOUND IN THE SOURCE CODE-----\n");
-	           
-	             //Look for the comscore script..... 
+	        // Check for the comscore code ...
+	        if (isComscorePresent) {
+	             System.out.println("-----COMSCORE SCRIPT ATTACHED IN THE SOURCE CODE-----\n");
+
+	       //Look for the comscore script..... 
 	             int startIndex = pageSource.indexOf("comscore");
 	             int endIndex = pageSource.indexOf("</script>", startIndex)  + "</script>".length();
 	             if (startIndex != -1 && endIndex != -1) 
@@ -528,6 +553,25 @@ public class WebDriverUtility {
 	          }
 	        }
       }
+	    /**
+	     * Gets the HTTP response code for a given URL.
+	     * @param pageUrl The URL to check
+	     * @return The HTTP response code
+	     */
+	    public static int getResponseCode(String pageUrl) throws URISyntaxException  {
+	        try {
+	            URI uri = new URI(pageUrl);
+	            URL url = uri.toURL();
+	            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+	            connection.setRequestMethod("GET");
+	            connection.connect();
+	            return connection.getResponseCode();
+	        }
+	        catch (IOException e) {
+	            e.printStackTrace();
+	            return -1; // Return -1 in case of an error
+	        }
+	    }
 	    
 	    /*
 	     * This method will extract the izooto code from the webpage source code
@@ -535,7 +579,19 @@ public class WebDriverUtility {
          * @return The content of the iZooto script(s) as a String.
          * @throws IOException If there is an error fetching the URL.
 	     */
-	    public void extractIzootoCode(WebDriver driver){
+	    public void extractIzootoCode(WebDriver driver) throws URISyntaxException{
+	    	
+	    	String pageUrl=driver.getCurrentUrl();
+	    	 if (pageUrl == null || pageUrl.isEmpty()) {
+	    	 System.err.println("Page URL is null or empty"); 
+	         }
+	    	// System.out.println("Page URL is:-- " +pageUrl);
+	    	 
+	    	// Get the HTTP response code and response time
+           long startTime = System.currentTimeMillis();
+           int responseCode = getResponseCode(pageUrl);
+           long responseTime = System.currentTimeMillis()-startTime;
+           System.out.println("Response Code for Izooto script:--" + responseCode);
 
             // Get the page source
             String pageSource = driver.getPageSource();
@@ -562,7 +618,19 @@ public class WebDriverUtility {
          * @return The content of the iZooto script(s) as a String.
          * @throws IOException If there is an error fetching the URL.
 	     */
-	    public void extractChartbeatCode(WebDriver driver) {
+	    public void extractChartbeatCode(WebDriver driver) throws URISyntaxException {
+	    	
+	    	String pageUrl=driver.getCurrentUrl();
+	    	 if (pageUrl == null || pageUrl.isEmpty()) {
+	    	 System.err.println("Page URL is null or empty"); 
+	         }
+	    	// System.out.println("Page URL is:-- " +pageUrl);
+	    	 
+	    	// Get the HTTP response code and response time
+           long startTime = System.currentTimeMillis();
+           int responseCode = getResponseCode(pageUrl);
+           long responseTime = System.currentTimeMillis()-startTime;
+           System.out.println("Response Code for Chartbeat script:--" + responseCode);
 	    	//get the pagesource code
 	    	String pageSource= driver.getPageSource();
 	    	
@@ -592,7 +660,18 @@ public class WebDriverUtility {
          * @throws IOException If there is an error fetching the URL.
 	     * 
 	     */
-	    public void extractGoogleManager(WebDriver driver) {
+	    public void extractGoogleManager(WebDriver driver) throws URISyntaxException {
+	    	String pageUrl=driver.getCurrentUrl();
+	    	 if (pageUrl == null || pageUrl.isEmpty()) {
+	    	 System.err.println("Page URL is null or empty"); 
+	         }
+	    	// System.out.println("Page URL is:-- " +pageUrl); 
+	    	// Get the HTTP response code and response time
+           long startTime = System.currentTimeMillis();
+           int responseCode = getResponseCode(pageUrl);
+           long responseTime = System.currentTimeMillis()-startTime;
+           System.out.println("Response Code for GT script:--" + responseCode);
+           
 	    	//Get the page source code
 	    	String pageSource=driver.getPageSource();
 	    	if(pageSource.contains("googletagmanager")) {

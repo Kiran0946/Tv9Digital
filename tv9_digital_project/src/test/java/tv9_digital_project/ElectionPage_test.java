@@ -2,6 +2,7 @@ package tv9_digital_project;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Map;
 
 import javax.xml.xpath.XPath;
@@ -25,7 +26,7 @@ public class ElectionPage_test extends BaseClass {
 	
 	@BeforeMethod
 	
-	public void beforeMethod() {
+	public void beforeMethod() throws URISyntaxException {
 	 
 	   
 	        driver.get(URL);//navigation tom url
@@ -37,6 +38,10 @@ public class ElectionPage_test extends BaseClass {
 	        logCurrentUrl(driver);// it will get the url of each page
 	        getCurrentDateTime();
 	        isPageUsingHttps(driver);
+	        extractComScoreCode(driver);//verify the comscore script
+	        extractChartbeatCode(driver);//verify the chartbeat script
+	        extractIzootoCode(driver);//verify the izooto script
+	        extractGoogleManager(driver);//verify gt script
 	       // printInfo();
 	    
 	
