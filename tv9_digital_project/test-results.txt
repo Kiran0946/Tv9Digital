@@ -2542,3 +2542,67 @@ Test Name: testIsPageUsingHttps
 Time Taken: 1733293012 seconds
 Status: PASSED
 -----------------------------------------
+Test Name: testHomePage
+Time Taken: 1734427506 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testWebStory
+Time Taken: 1734427513 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testState
+Time Taken: 1734427518 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testCountry
+Time Taken: 1734427526 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testElections2024
+Time Taken: 1734427540 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHindiLanguage
+Time Taken: 1734427557 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testReligion
+Time Taken: 1734427562 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testTechnology
+Time Taken: 1734427567 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testActiveVideo
+Time Taken: 1734427572 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testEducation
+Time Taken: 1734427576 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testHealth
+Time Taken: 1734427582 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testKnowledge
+Time Taken: 1734427587 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testSports
+Time Taken: 1734427593 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testBusiness
+Time Taken: 1734427597 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testWorld
+Time Taken: 1734427604 seconds
+Status: PASSED
+-----------------------------------------
+Test Name: testIsPageUsingHttps
+Time Taken: 1734427609 seconds
+Status: PASSED
+-----------------------------------------
