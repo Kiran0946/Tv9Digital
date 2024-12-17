@@ -32,7 +32,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	public void beforeMethod() throws URISyntaxException {
 		
         driver.get(url);  
-        System.out.println("Navigated to URL:---"+ url);
+        System.out.println("Navigated to URL:---"+url);
         
         //methods invoked from webdriver class
         
@@ -108,8 +108,7 @@ public class tv9HomePage_test  extends  BaseClass {
 	       //mouseHoverAction(driver, Webstory);
 	       
 	    }
-	 
-	 
+	 //////////////////////////////
 	 @Test(priority=4)
 	    public void testState() {
 		 validateAndClick("div[class='tv9_catnavbar'] a[title='राज्य']","css","State");//state
